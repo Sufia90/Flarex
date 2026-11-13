@@ -8,7 +8,6 @@ A dashboard-first research platform for NASA microgravity combustion investigati
 
 - **Live app:** https://flarex-neon.vercel.app/
 - **GitHub:** https://github.com/Sufia90/Flarex
-- **240-second video (YouTube):** https://youtu.be/uBNQT_M7zMw
 - **Backend:** https://flarex-backend-c59g.onrender.com
 
 ## Team
