@@ -3,6 +3,7 @@ import { AppLayout } from '../components/layout/AppLayout'
 import { CompareRankPage } from '../pages/CompareRankPage'
 import { ExperimentExplorerPage } from '../pages/ExperimentExplorerPage'
 import { FireSafetyPage } from '../pages/FireSafetyPage'
+import { FlammabilityExplorerPage } from '../pages/FlammabilityExplorerPage'
 import { MissionRelevancePage } from '../pages/MissionRelevancePage'
 import { NotFoundPage } from '../pages/NotFoundPage'
 import { OverviewPage } from '../pages/OverviewPage'
@@ -19,6 +20,7 @@ export const router = createBrowserRouter([
       { path: 'fire-safety', element: <FireSafetyPage /> },
       { path: 'mission-relevance', element: <MissionRelevancePage /> },
       { path: 'research-assistant', element: <ResearchAssistantPage /> },
+      { path: 'flammability', element: <FlammabilityExplorerPage /> },
       { path: '*', element: <NotFoundPage /> },
     ],
   },
