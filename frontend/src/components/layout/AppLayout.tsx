@@ -90,7 +90,7 @@ export function AppLayout() {
                <svg className="w-4 h-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                <span>Search...</span>
              </div>
-             <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-cyan-600 to-blue-500 border border-cyan-400/50 shadow-[0_0_10px_rgba(34,211,238,0.2)]"></div>
+             {/* সার্কেলটি এখান থেকে ডিলিট করা হয়েছে */}
           </div>
         </header>
 
