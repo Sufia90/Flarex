@@ -44,4 +44,8 @@ export const endpoints = {
     byExperiment: (experimentId: string) => `/v1/fire-safety/experiments/${encodeURIComponent(experimentId)}`,
     byHardware: (hardwareId: string) => `/v1/fire-safety/hardware/${encodeURIComponent(hardwareId)}`,
   },
+  flammability: {
+    predict: '/v1/flammability/predict',
+    modelInfo: '/v1/flammability/model-info',
+  },
 }
