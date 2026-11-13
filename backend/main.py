@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api.routes import comparisons, experiments, fire_safety, hardware, mission_relevance, rankings, relationships, sources
+from app.api.routes import comparisons, experiments, fire_safety, flammability, hardware, mission_relevance, rankings, relationships, sources
 from app.core.config import settings
 from app.core.logging_config import setup_logging
 
@@ -31,3 +31,4 @@ app.include_router(rankings.router, prefix=settings.api_prefix)
 app.include_router(mission_relevance.router, prefix=settings.api_prefix)
 app.include_router(fire_safety.router, prefix=settings.api_prefix)
 app.include_router(sources.router, prefix=settings.api_prefix)
+app.include_router(flammability.router, prefix=settings.api_prefix)

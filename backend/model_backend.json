@@ -1,0 +1,846 @@
+{
+  "model": "DecisionTreeRegressor(max_depth=4, min_samples_leaf=5)",
+  "feature_names": [
+    "initial_o2",
+    "fan_display",
+    "air_display",
+    "initial_co2",
+    "initial_co",
+    "mat_Nomex",
+    "mat_PMMA",
+    "mat_SIBAL",
+    "mat_unknown",
+    "mat_wax",
+    "form_film",
+    "form_other",
+    "form_rod",
+    "form_sphere"
+  ],
+  "materials": [
+    "Nomex",
+    "PMMA",
+    "SIBAL",
+    "unknown",
+    "wax"
+  ],
+  "forms": [
+    "film",
+    "other",
+    "rod",
+    "sphere"
+  ],
+  "medians": {
+    "fan": 47.0,
+    "air": 5.0,
+    "co2i": 0.41,
+    "coi": 5.5
+  },
+  "regime_rule": "initial O2 >= 19% sooty flame, else blue flame (interpretation of the BASS finding, not a learned label)",
+  "confidence_rule": "confidence = clip(R2_test, 0, 1) * (1 - leaf_std / overall_std); below 25% the prediction is shown with a low-confidence warning",
+  "targets": {
+    "final_o2": {
+      "mae": 2.721,
+      "r2": -0.216,
+      "overall_std": 3.586,
+      "nodes": [
+        {
+          "id": 0,
+          "feature": 0,
+          "threshold": 20.84999942779541,
+          "left": 1,
+          "right": 14,
+          "value": 17.327,
+          "samples": 101,
+          "std": null
+        },
+        {
+          "id": 1,
+          "feature": 0,
+          "threshold": 16.75,
+          "left": 2,
+          "right": 9,
+          "value": 16.624,
+          "samples": 80,
+          "std": null
+        },
+        {
+          "id": 2,
+          "feature": 0,
+          "threshold": 15.949999809265137,
+          "left": 3,
+          "right": 6,
+          "value": 15.112,
+          "samples": 25,
+          "std": null
+        },
+        {
+          "id": 3,
+          "feature": 0,
+          "threshold": 15.25,
+          "left": 4,
+          "right": 5,
+          "value": 14.527,
+          "samples": 15,
+          "std": null
+        },
+        {
+          "id": 4,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 14.137,
+          "samples": 8,
+          "std": 0.364
+        },
+        {
+          "id": 5,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 14.971,
+          "samples": 7,
+          "std": 0.306
+        },
+        {
+          "id": 6,
+          "feature": 3,
+          "threshold": 0.4699999988079071,
+          "left": 7,
+          "right": 8,
+          "value": 15.99,
+          "samples": 10,
+          "std": null
+        },
+        {
+          "id": 7,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 16.02,
+          "samples": 5,
+          "std": 0.426
+        },
+        {
+          "id": 8,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 15.96,
+          "samples": 5,
+          "std": 0.344
+        },
+        {
+          "id": 9,
+          "feature": 0,
+          "threshold": 20.65000057220459,
+          "left": 10,
+          "right": 13,
+          "value": 17.311,
+          "samples": 55,
+          "std": null
+        },
+        {
+          "id": 10,
+          "feature": 0,
+          "threshold": 18.300000190734863,
+          "left": 11,
+          "right": 12,
+          "value": 17.628,
+          "samples": 47,
+          "std": null
+        },
+        {
+          "id": 11,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 17.216,
+          "samples": 31,
+          "std": 0.326
+        },
+        {
+          "id": 12,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 18.425,
+          "samples": 16,
+          "std": 0.699
+        },
+        {
+          "id": 13,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 15.45,
+          "samples": 8,
+          "std": 8.501
+        },
+        {
+          "id": 14,
+          "feature": 4,
+          "threshold": 4.0,
+          "left": 15,
+          "right": 18,
+          "value": 20.005,
+          "samples": 21,
+          "std": null
+        },
+        {
+          "id": 15,
+          "feature": 0,
+          "threshold": 22.0,
+          "left": 16,
+          "right": 17,
+          "value": 21.064,
+          "samples": 14,
+          "std": null
+        },
+        {
+          "id": 16,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 20.544,
+          "samples": 9,
+          "std": 0.374
+        },
+        {
+          "id": 17,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 22.0,
+          "samples": 5,
+          "std": 0.228
+        },
+        {
+          "id": 18,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 17.886,
+          "samples": 7,
+          "std": 6.699
+        }
+      ],
+      "null_predictions": [
+        {
+          "test": "B14",
+          "material": "PMMA",
+          "form": "other",
+          "initial_o2": 15.0,
+          "predicted": null,
+          "confidence_pct": 0.0,
+          "shown_as": "insufficient evidence"
+        },
+        {
+          "test": "F3",
+          "material": "Nomex",
+          "form": "other",
+          "initial_o2": 21.7,
+          "predicted": null,
+          "confidence_pct": 0.0,
+          "shown_as": "insufficient evidence"
+        }
+      ]
+    },
+    "final_co": {
+      "mae": 112.493,
+      "r2": 0.592,
+      "overall_std": 204.773,
+      "nodes": [
+        {
+          "id": 0,
+          "feature": 4,
+          "threshold": 158.0,
+          "left": 1,
+          "right": 14,
+          "value": 177.26,
+          "samples": 96,
+          "std": null
+        },
+        {
+          "id": 1,
+          "feature": 6,
+          "threshold": 0.5,
+          "left": 2,
+          "right": 9,
+          "value": 134.102,
+          "samples": 88,
+          "std": null
+        },
+        {
+          "id": 2,
+          "feature": 12,
+          "threshold": 0.5,
+          "left": 3,
+          "right": 6,
+          "value": 94.82,
+          "samples": 61,
+          "std": null
+        },
+        {
+          "id": 3,
+          "feature": 4,
+          "threshold": 36.5,
+          "left": 4,
+          "right": 5,
+          "value": 50.645,
+          "samples": 31,
+          "std": null
+        },
+        {
+          "id": 4,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 23.55,
+          "samples": 20,
+          "std": 15.756
+        },
+        {
+          "id": 5,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 99.909,
+          "samples": 11,
+          "std": 31.155
+        },
+        {
+          "id": 6,
+          "feature": 1,
+          "threshold": 25.5,
+          "left": 7,
+          "right": 8,
+          "value": 140.467,
+          "samples": 30,
+          "std": null
+        },
+        {
+          "id": 7,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 313.8,
+          "samples": 5,
+          "std": 160.55
+        },
+        {
+          "id": 8,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 105.8,
+          "samples": 25,
+          "std": 100.727
+        },
+        {
+          "id": 9,
+          "feature": 10,
+          "threshold": 0.5,
+          "left": 10,
+          "right": 13,
+          "value": 222.852,
+          "samples": 27,
+          "std": null
+        },
+        {
+          "id": 10,
+          "feature": 0,
+          "threshold": 18.399999618530273,
+          "left": 11,
+          "right": 12,
+          "value": 275.0,
+          "samples": 21,
+          "std": null
+        },
+        {
+          "id": 11,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 184.111,
+          "samples": 9,
+          "std": 135.205
+        },
+        {
+          "id": 12,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 343.167,
+          "samples": 12,
+          "std": 168.646
+        },
+        {
+          "id": 13,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 40.333,
+          "samples": 6,
+          "std": 42.287
+        },
+        {
+          "id": 14,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 652.0,
+          "samples": 8,
+          "std": 114.712
+        }
+      ],
+      "null_predictions": [
+        {
+          "test": "B2",
+          "material": "PMMA",
+          "form": "film",
+          "initial_o2": 22.2,
+          "predicted": 40.333,
+          "confidence_pct": 46.9,
+          "shown_as": "model-estimated"
+        },
+        {
+          "test": "B14",
+          "material": "PMMA",
+          "form": "other",
+          "initial_o2": 15.0,
+          "predicted": null,
+          "confidence_pct": 20.1,
+          "shown_as": "insufficient evidence"
+        },
+        {
+          "test": "F3",
+          "material": "Nomex",
+          "form": "other",
+          "initial_o2": 21.7,
+          "predicted": 23.55,
+          "confidence_pct": 54.6,
+          "shown_as": "model-estimated"
+        },
+        {
+          "test": "M5",
+          "material": "PMMA",
+          "form": "other",
+          "initial_o2": 22.2,
+          "predicted": null,
+          "confidence_pct": 10.4,
+          "shown_as": "insufficient evidence"
+        },
+        {
+          "test": "O4",
+          "material": "unknown",
+          "form": "rod",
+          "initial_o2": 14.8,
+          "predicted": 652.0,
+          "confidence_pct": 26.0,
+          "shown_as": "model-estimated"
+        },
+        {
+          "test": "O12",
+          "material": "unknown",
+          "form": "rod",
+          "initial_o2": 13.6,
+          "predicted": null,
+          "confidence_pct": 12.8,
+          "shown_as": "insufficient evidence"
+        },
+        {
+          "test": "O13b",
+          "material": "PMMA",
+          "form": "rod",
+          "initial_o2": 14.6,
+          "predicted": 652.0,
+          "confidence_pct": 26.0,
+          "shown_as": "model-estimated"
+        },
+        {
+          "test": "P22a",
+          "material": "unknown",
+          "form": "rod",
+          "initial_o2": 20.8,
+          "predicted": null,
+          "confidence_pct": 12.8,
+          "shown_as": "insufficient evidence"
+        },
+        {
+          "test": "T28a",
+          "material": "SIBAL",
+          "form": "other",
+          "initial_o2": 20.7,
+          "predicted": 23.55,
+          "confidence_pct": 54.6,
+          "shown_as": "model-estimated"
+        }
+      ]
+    },
+    "final_co2": {
+      "mae": 0.319,
+      "r2": 0.509,
+      "overall_std": 0.567,
+      "nodes": [
+        {
+          "id": 0,
+          "feature": 3,
+          "threshold": 0.7300000190734863,
+          "left": 1,
+          "right": 14,
+          "value": 0.885,
+          "samples": 98,
+          "std": null
+        },
+        {
+          "id": 1,
+          "feature": 7,
+          "threshold": 0.5,
+          "left": 2,
+          "right": 9,
+          "value": 0.752,
+          "samples": 83,
+          "std": null
+        },
+        {
+          "id": 2,
+          "feature": 0,
+          "threshold": 18.449999809265137,
+          "left": 3,
+          "right": 6,
+          "value": 0.877,
+          "samples": 60,
+          "std": null
+        },
+        {
+          "id": 3,
+          "feature": 11,
+          "threshold": 0.5,
+          "left": 4,
+          "right": 5,
+          "value": 0.665,
+          "samples": 26,
+          "std": null
+        },
+        {
+          "id": 4,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 0.724,
+          "samples": 19,
+          "std": 0.21
+        },
+        {
+          "id": 5,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 0.506,
+          "samples": 7,
+          "std": 0.12
+        },
+        {
+          "id": 6,
+          "feature": 10,
+          "threshold": 0.5,
+          "left": 7,
+          "right": 8,
+          "value": 1.039,
+          "samples": 34,
+          "std": null
+        },
+        {
+          "id": 7,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 1.214,
+          "samples": 26,
+          "std": 0.608
+        },
+        {
+          "id": 8,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 0.472,
+          "samples": 8,
+          "std": 0.064
+        },
+        {
+          "id": 9,
+          "feature": 3,
+          "threshold": 0.4749999940395355,
+          "left": 10,
+          "right": 13,
+          "value": 0.423,
+          "samples": 23,
+          "std": null
+        },
+        {
+          "id": 10,
+          "feature": 3,
+          "threshold": 0.32999999821186066,
+          "left": 11,
+          "right": 12,
+          "value": 0.357,
+          "samples": 18,
+          "std": null
+        },
+        {
+          "id": 11,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 0.28,
+          "samples": 8,
+          "std": 0.049
+        },
+        {
+          "id": 12,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 0.418,
+          "samples": 10,
+          "std": 0.024
+        },
+        {
+          "id": 13,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 0.664,
+          "samples": 5,
+          "std": 0.08
+        },
+        {
+          "id": 14,
+          "feature": 3,
+          "threshold": 1.324999988079071,
+          "left": 15,
+          "right": 18,
+          "value": 1.625,
+          "samples": 15,
+          "std": null
+        },
+        {
+          "id": 15,
+          "feature": 1,
+          "threshold": 47.5,
+          "left": 16,
+          "right": 17,
+          "value": 1.484,
+          "samples": 10,
+          "std": null
+        },
+        {
+          "id": 16,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 1.346,
+          "samples": 5,
+          "std": 0.287
+        },
+        {
+          "id": 17,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 1.622,
+          "samples": 5,
+          "std": 0.28
+        },
+        {
+          "id": 18,
+          "feature": -2,
+          "threshold": -2.0,
+          "left": -1,
+          "right": -1,
+          "value": 1.908,
+          "samples": 5,
+          "std": 0.127
+        }
+      ],
+      "null_predictions": [
+        {
+          "test": "B2",
+          "material": "PMMA",
+          "form": "film",
+          "initial_o2": 22.2,
+          "predicted": 0.472,
+          "confidence_pct": 45.2,
+          "shown_as": "model-estimated"
+        },
+        {
+          "test": "B14",
+          "material": "PMMA",
+          "form": "other",
+          "initial_o2": 15.0,
+          "predicted": 0.506,
+          "confidence_pct": 40.2,
+          "shown_as": "model-estimated"
+        },
+        {
+          "test": "F3",
+          "material": "Nomex",
+          "form": "other",
+          "initial_o2": 21.7,
+          "predicted": null,
+          "confidence_pct": 0.0,
+          "shown_as": "insufficient evidence"
+        },
+        {
+          "test": "P3b",
+          "material": "unknown",
+          "form": "rod",
+          "initial_o2": 17.4,
+          "predicted": 0.724,
+          "confidence_pct": 32.1,
+          "shown_as": "model-estimated"
+        },
+        {
+          "test": "P22a",
+          "material": "unknown",
+          "form": "rod",
+          "initial_o2": 20.8,
+          "predicted": null,
+          "confidence_pct": 0.0,
+          "shown_as": "insufficient evidence"
+        },
+        {
+          "test": "T28a",
+          "material": "SIBAL",
+          "form": "other",
+          "initial_o2": 20.7,
+          "predicted": 0.418,
+          "confidence_pct": 48.8,
+          "shown_as": "model-estimated"
+        }
+      ]
+    }
+  },
+  "pmma_medians": {
+    "fan": 3.9,
+    "air": 10.0,
+    "co2i": 0.38,
+    "coi": 1.0
+  },
+  "killer_demo_nearest": {
+    "21.0": {
+      "regime": "sooty flame",
+      "predictions": {
+        "final_o2": {
+          "value": 20.544,
+          "confidence_pct": 0.0
+        },
+        "final_co": {
+          "value": 40.378,
+          "confidence_pct": 57.7
+        },
+        "final_co2": {
+          "value": 0.47,
+          "confidence_pct": 59.4
+        }
+      }
+    },
+    "17.0": {
+      "regime": "blue flame",
+      "predictions": {
+        "final_o2": {
+          "value": 17.216,
+          "confidence_pct": 0.0
+        },
+        "final_co": {
+          "value": 40.907,
+          "confidence_pct": 57.2
+        },
+        "final_co2": {
+          "value": 0.489,
+          "confidence_pct": 56.0
+        }
+      }
+    },
+    "nearest_above_19pct": [
+      {
+        "test": "M19",
+        "fuel_raw": "4 mm thick   2 cm 2ide PMMA slab",
+        "initial_o2": 19.0,
+        "final_o2": 17.4,
+        "final_co": 357.0,
+        "final_co2": 1.6
+      },
+      {
+        "test": "M8",
+        "fuel_raw": "1 cm wide PMMA 2 mm thick",
+        "initial_o2": 19.1,
+        "final_o2": 18.2,
+        "final_co": 467.0,
+        "final_co2": 1.28
+      },
+      {
+        "test": "M16",
+        "fuel_raw": "1 mm thick PMMA   2 cm wide",
+        "initial_o2": 19.2,
+        "final_o2": 18.7,
+        "final_co": 421.0,
+        "final_co2": 1.75
+      }
+    ],
+    "nearest_below_19pct": [
+      {
+        "test": "M7",
+        "fuel_raw": "1 cm wide PMMA 1 mm thick",
+        "initial_o2": 18.9,
+        "final_o2": 18.4,
+        "final_co": 612.0,
+        "final_co2": 1.84
+      },
+      {
+        "test": "M17",
+        "fuel_raw": "2 cm wide PMMA 2 mm thick",
+        "initial_o2": 18.8,
+        "final_o2": 17.1,
+        "final_co": 485.0,
+        "final_co2": 1.7
+      },
+      {
+        "test": "M9",
+        "fuel_raw": "1 cm wide PMMA 3 mm thick",
+        "initial_o2": 18.0,
+        "final_o2": 17.6,
+        "final_co": 191.0,
+        "final_co2": 0.54
+      }
+    ]
+  }
+}
