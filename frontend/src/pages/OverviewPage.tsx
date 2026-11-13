@@ -61,10 +61,10 @@ export function OverviewPage() {
           {/* Central Interactive Viewer with Background Image */}
           <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0A1628] p-6 min-h-[350px] flex flex-col items-center justify-center group">
             
-            {/* 🔴 এখানে আপনার ছবির লিংক বা পাথ বসাবেন 🔴 */}
+            {/* ছবির লিংক */}
             <div 
               className="absolute inset-0 opacity-30 group-hover:opacity-40 transition-opacity duration-700 bg-cover bg-center"
-             style={{ backgroundImage: "url('https://www.nasa.gov/wp-content/uploads/2025/10/iss035e040444-0cf1d9.jpg')" }}
+              style={{ backgroundImage: "url('https://www.nasa.gov/wp-content/uploads/2025/10/iss035e040444-0cf1d9.jpg')" }}
             ></div>
             
             {/* Overlay to make text readable */}
@@ -106,34 +106,52 @@ export function OverviewPage() {
 
         {/* Right Column (1/3 width) */}
         <div className="space-y-6">
-          <div className="rounded-2xl border border-white/10 bg-[#0A1628] p-6 h-full">
-            <h2 className="text-sm font-semibold text-cyan-400 uppercase tracking-widest mb-6">Research Insights</h2>
+          <div className="rounded-2xl border border-white/10 bg-[#0A1628] p-6 h-full flex flex-col">
+            <h2 className="text-sm font-semibold text-cyan-400 uppercase tracking-widest mb-6 border-b border-white/5 pb-4">Research Insights</h2>
             
-            <div className="space-y-6">
+            <div className="space-y-6 flex-1">
+              {/* Evidence Standards Section */}
               <div>
-                <h3 className="text-xs text-slate-500 uppercase tracking-wider mb-3">Quick Access</h3>
-                <ul className="space-y-2">
-                  {[
-                    { to: "/experiments", label: "Experiment Explorer", desc: "Browse all research data" },
-                    { to: "/compare", label: "Compare & Rank", desc: "Analyze against criteria" },
-                    { to: "/fire-safety", label: "Fire Safety Insights", desc: "Prevention & Suppression" },
-                    { to: "/mission-relevance", label: "Mission Relevance", desc: "ISS, Moon & Mars data" }
-                  ].map((item, i) => (
-                    <li key={i}>
-                      <Link to={item.to} className="block p-3 rounded-lg bg-white/5 hover:bg-cyan-500/10 border border-transparent hover:border-cyan-500/30 transition-all group">
-                        <span className="block text-sm font-medium text-white group-hover:text-cyan-300 transition-colors">{item.label}</span>
-                        <span className="block text-xs text-slate-400 mt-1">{item.desc}</span>
-                      </Link>
-                    </li>
-                  ))}
+                <h3 className="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-3 flex items-center gap-2">
+                  <svg className="w-4 h-4 text-cyan-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  Evidence Standards
+                </h3>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  All data presented in this explorer is derived from actual NASA combustion experiments. 
+                </p>
+                <ul className="mt-3 space-y-2">
+                  <li className="flex items-start gap-2 text-xs text-slate-400">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 mt-1 shrink-0"></span>
+                    <span><strong className="text-slate-300">Verified:</strong> Data directly linked to source IDs.</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs text-slate-400">
+                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1 shrink-0"></span>
+                    <span><strong className="text-slate-300">Derived:</strong> Interpretations based on documented data.</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-xs text-slate-400">
+                    <span className="w-1.5 h-1.5 rounded-full bg-orange-500 mt-1 shrink-0"></span>
+                    <span><strong className="text-slate-300">Potential:</strong> Applications requiring further validation.</span>
+                  </li>
                 </ul>
               </div>
 
-              <div className="pt-4 border-t border-white/10">
-                <p className="text-[11px] text-slate-500 leading-relaxed">
-                  <strong className="text-slate-400">Note:</strong> Backend availability is not NASA data availability. Counts above come from the real API; zero means no records are loaded, not an error.
+              {/* Quick Stats or Notes */}
+              <div className="pt-4 border-t border-white/5">
+                <h3 className="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-2">
+                  <svg className="w-4 h-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  Explorer Guide
+                </h3>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Use the <strong className="text-cyan-300">Research Assistant</strong> in the sidebar to ask questions about specific combustion behaviors, or visit the <strong className="text-cyan-300">Compare</strong> page to analyze data side-by-side.
                 </p>
               </div>
+            </div>
+
+            {/* Disclaimer Note */}
+            <div className="pt-4 border-t border-white/10 mt-auto">
+              <p className="text-[10px] text-slate-500 leading-relaxed text-justify">
+                <strong className="text-slate-400">Note:</strong> Backend availability is not NASA data availability. Counts above come from the real API; zero means no records are loaded, not an error.
+              </p>
             </div>
           </div>
         </div>
