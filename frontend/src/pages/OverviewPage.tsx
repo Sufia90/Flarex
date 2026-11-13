@@ -43,7 +43,7 @@ export function OverviewPage() {
 
   return (
     <div className="space-y-8 pb-12">
-      {/* Top Status Bar - Subtle minimal design */}
+      {/* Top Status Bar */}
       <div className="flex items-center justify-between rounded-lg border border-cyan-500/20 bg-cyan-950/20 px-4 py-2">
         <p className="text-xs text-cyan-300/80 font-mono tracking-widest uppercase">
           System Status: <span className="text-cyan-400 font-bold">{health.data?.status ?? 'unknown'}</span> ({health.data?.service ?? ''})
@@ -51,30 +51,39 @@ export function OverviewPage() {
         <span className="flex h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee]"></span>
       </div>
 
-      {/* Main Grid Layout: Dashboard Style */}
+      {/* Main Grid Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
-        {/* Left Column (2/3 width) - Central Visual & Stats */}
+        {/* Left Column (2/3 width) */}
         <div className="lg:col-span-2 space-y-6">
           <OverviewStats counts={counts} />
 
-          {/* Central Interactive Viewer Placeholder (Combustion Theme) */}
+          {/* Central Interactive Viewer with Background Image */}
           <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0A1628] p-6 min-h-[350px] flex flex-col items-center justify-center group">
+            
+            {/* 🔴 এখানে আপনার ছবির লিংক বা পাথ বসাবেন 🔴 */}
+            <div 
+              className="absolute inset-0 opacity-30 group-hover:opacity-40 transition-opacity duration-700 bg-cover bg-center"
+             style={{ backgroundImage: "url('https://www.nasa.gov/wp-content/uploads/2025/10/iss035e040444-0cf1d9.jpg')" }}
+            ></div>
+            
+            {/* Overlay to make text readable */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-[#0A1628]/60 to-transparent"></div>
+
             {/* Background Glow Effect */}
-            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-blue-500/5"></div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl group-hover:bg-cyan-500/20 transition-all duration-700"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl group-hover:bg-cyan-500/20 transition-all duration-700 pointer-events-none"></div>
             
             <div className="relative z-10 text-center space-y-4">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-cyan-950 border border-cyan-500/50 shadow-[0_0_20px_rgba(34,211,238,0.3)] mb-2">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-cyan-950/80 backdrop-blur-sm border border-cyan-500/50 shadow-[0_0_20px_rgba(34,211,238,0.3)] mb-2">
                 <svg className="w-8 h-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-white tracking-wide">Combustion Research Visualization</h3>
-              <p className="text-sm text-slate-400 max-w-md mx-auto">
+              <h3 className="text-xl font-semibold text-white tracking-wide drop-shadow-lg">Combustion Research Visualization</h3>
+              <p className="text-sm text-slate-300 max-w-md mx-auto drop-shadow-md">
                 Explore the latest fire safety experiments and thermal dynamics. Interactive 3D viewer will be integrated here.
               </p>
-              <Link to="/experiments" className="inline-block mt-4 px-6 py-2 rounded-full border border-cyan-500/50 text-cyan-300 text-sm font-medium hover:bg-cyan-500/10 transition-colors">
+              <Link to="/experiments" className="inline-block mt-4 px-6 py-2 rounded-full border border-cyan-500/50 bg-[#040B14]/50 backdrop-blur-sm text-cyan-300 text-sm font-medium hover:bg-cyan-500/20 transition-all shadow-[0_0_15px_rgba(34,211,238,0.2)]">
                 Explore Experiments
               </Link>
             </div>
@@ -95,9 +104,8 @@ export function OverviewPage() {
           )}
         </div>
 
-        {/* Right Column (1/3 width) - Insights & Navigation */}
+        {/* Right Column (1/3 width) */}
         <div className="space-y-6">
-          {/* Research Insights Panel */}
           <div className="rounded-2xl border border-white/10 bg-[#0A1628] p-6 h-full">
             <h2 className="text-sm font-semibold text-cyan-400 uppercase tracking-widest mb-6">Research Insights</h2>
             
@@ -121,7 +129,6 @@ export function OverviewPage() {
                 </ul>
               </div>
 
-              {/* Disclaimer Note */}
               <div className="pt-4 border-t border-white/10">
                 <p className="text-[11px] text-slate-500 leading-relaxed">
                   <strong className="text-slate-400">Note:</strong> Backend availability is not NASA data availability. Counts above come from the real API; zero means no records are loaded, not an error.

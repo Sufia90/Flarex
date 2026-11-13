@@ -1,3 +1,4 @@
+
 import { NavLink, Outlet } from 'react-router'
 
 const navItems = [
@@ -15,32 +16,39 @@ export function AppLayout() {
       
       {/* Sidebar Navigation */}
       <aside className="w-64 flex-shrink-0 border-r border-white/5 bg-[#07111F] flex flex-col hidden md:flex sticky top-0 h-screen">
+        
         {/* Logo Area */}
-        <div className="h-20 flex items-center px-6 border-b border-white/5 bg-gradient-to-r from-cyan-950/30 to-transparent">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded bg-cyan-500/20 border border-cyan-500/50 flex items-center justify-center shadow-[0_0_10px_rgba(34,211,238,0.2)]">
-               <span className="text-cyan-400 font-bold text-lg">F</span>
+        <div className="h-20 flex items-center px-6 border-b border-white/5 bg-gradient-to-r from-cyan-950/30 to-transparent relative overflow-hidden">
+          {/* Subtle background glow for logo */}
+          <div className="absolute top-0 left-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl"></div>
+          
+          <div className="flex items-center gap-3 relative z-10">
+            {/* Fire/Flame Logo */}
+            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500/20 to-orange-500/20 border border-cyan-500/30 flex items-center justify-center shadow-[0_0_15px_rgba(34,211,238,0.15)] group hover:scale-105 transition-transform cursor-pointer">
+               <svg className="w-5 h-5 text-orange-400 drop-shadow-[0_0_5px_rgba(249,115,22,0.8)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+               </svg>
             </div>
             <div>
-              <h1 className="text-sm font-bold text-white tracking-wide leading-tight">FLAREX</h1>
-              <p className="text-[10px] text-cyan-400/70 uppercase tracking-widest font-mono">Combustion Explorer</p>
+              <h1 className="text-base font-black text-white tracking-[0.1em] leading-tight drop-shadow-md">FLAREX</h1>
+              <p className="text-[9px] text-cyan-400/80 uppercase tracking-[0.25em] font-medium font-mono mt-0.5">Combustion Explorer</p>
             </div>
           </div>
         </div>
 
         {/* Nav Links */}
-        <nav className="flex-1 overflow-y-auto py-6 px-3 space-y-1">
-          <p className="px-3 text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-2 mt-2">Research Modules</p>
+        <nav className="flex-1 overflow-y-auto py-6 px-3 space-y-1.5">
+          <p className="px-3 text-[10px] font-bold text-slate-500 uppercase tracking-[0.15em] mb-3 mt-1">Research Modules</p>
           {navItems.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               end={item.to === '/'}
               className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all duration-200 group relative overflow-hidden ${
+                `flex items-center gap-3 px-3 py-2.5 rounded-xl text-[13px] tracking-wide transition-all duration-300 group relative overflow-hidden ${
                   isActive 
-                    ? 'bg-cyan-500/10 text-cyan-300 font-medium' 
-                    : 'text-slate-400 hover:bg-white/5 hover:text-white'
+                    ? 'bg-cyan-500/10 text-cyan-300 font-semibold border border-cyan-500/20 shadow-[inset_0_0_15px_rgba(34,211,238,0.05)]' 
+                    : 'text-slate-400 font-medium border border-transparent hover:bg-white/[0.03] hover:text-slate-200'
                 }`
               }
             >
@@ -48,12 +56,21 @@ export function AppLayout() {
                 <>
                   {/* Active Indicator Line */}
                   {isActive && (
-                    <span className="absolute left-0 top-0 bottom-0 w-1 bg-cyan-400 shadow-[0_0_10px_#22d3ee] rounded-r-md"></span>
+                    <span className="absolute left-0 top-0 bottom-0 w-[3px] bg-cyan-400 shadow-[0_0_12px_#22d3ee] rounded-r-md"></span>
                   )}
-                  <svg className={`w-5 h-5 ${isActive ? 'text-cyan-400' : 'text-slate-500 group-hover:text-slate-300'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={item.icon} />
+                  
+                  {/* Icon */}
+                  <svg 
+                    className={`w-[18px] h-[18px] transition-colors duration-300 ${isActive ? 'text-cyan-400' : 'text-slate-500 group-hover:text-cyan-400/70'}`} 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={isActive ? 2 : 1.5} d={item.icon} />
                   </svg>
-                  <span>{item.label}</span>
+                  
+                  {/* Label */}
+                  <span className="group-hover:translate-x-0.5 transition-transform duration-300">{item.label}</span>
                 </>
               )}
             </NavLink>
@@ -62,14 +79,14 @@ export function AppLayout() {
 
         {/* Bottom Status */}
         <div className="p-4 border-t border-white/5 bg-[#050D17]">
-          <div className="flex items-center gap-3 px-3 py-2 rounded-lg bg-white/5 border border-white/5">
-            <span className="relative flex h-2.5 w-2.5">
+          <div className="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
+            <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500 shadow-[0_0_8px_#22c55e]"></span>
             </span>
             <div className="text-xs">
-              <p className="text-slate-300 font-medium">System Online</p>
-              <p className="text-slate-500 text-[10px]">API Connected</p>
+              <p className="text-slate-300 font-semibold tracking-wide">System Online</p>
+              <p className="text-slate-500 text-[9px] uppercase tracking-widest mt-0.5">API Connected</p>
             </div>
           </div>
         </div>
@@ -77,25 +94,25 @@ export function AppLayout() {
 
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col min-w-0">
+        
         {/* Top Header */}
-        <header className="h-16 md:h-20 border-b border-white/5 bg-[#040B14]/80 backdrop-blur-md sticky top-0 z-10 px-4 md:px-8 flex items-center justify-between">
+        <header className="h-20 border-b border-white/5 bg-[#040B14]/80 backdrop-blur-md sticky top-0 z-10 px-8 flex items-center justify-between">
           <div>
-            <h2 className="text-base md:text-lg font-semibold text-white tracking-wide">NASA Combustion Research Explorer</h2>
-            <p className="text-xs text-slate-500 hidden sm:block mt-0.5">Explore · Compare · Understand · Apply</p>
+            <h2 className="text-lg font-bold text-white tracking-wide">NASA Combustion Research Explorer</h2>
+            <p className="text-xs text-slate-400 font-medium mt-0.5 tracking-widest uppercase">Explore · Compare · Understand · Apply</p>
           </div>
           
           {/* Top Right Actions */}
           <div className="flex items-center gap-4">
-             <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-slate-300">
+             <div className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.03] border border-white/10 text-xs text-slate-300 hover:bg-white/[0.06] transition-colors cursor-pointer">
                <svg className="w-4 h-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-               <span>Search...</span>
+               <span className="tracking-wide">Search...</span>
              </div>
-             {/* সার্কেলটি এখান থেকে ডিলিট করা হয়েছে */}
           </div>
         </header>
 
         {/* Page Content */}
-        <main className="flex-1 p-4 md:p-8 overflow-x-hidden">
+        <main className="flex-1 p-6 md:p-8 overflow-x-hidden">
           <div className="max-w-7xl mx-auto">
             <Outlet />
           </div>
