@@ -27,7 +27,7 @@
     "publisher": "NASA",
     "source_type": "nasa_report",
     "title": "BASS-II Summary Report",
-    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25"
+    "url": "https://ntrs.nasa.gov/citations/20210011385"
   },
   {
     "description": "Source for the BASS-II investigation.",
@@ -40,12 +40,13 @@
     "url": "https://ntrs.nasa.gov/api/citations/20150008961/downloads/20150008961.pdf"
   },
   {
-    "description": "Source for the BASS-II investigation. No direct download URL was given in the research team's JSON, so none is recorded.",
+    "description": "Source for the BASS-II investigation. Direct PDF link verified 2026-11-13.",
     "id": "src-bass-ii-ntrs-20150019858",
     "nasa_report_id": "NTRS 20150019858",
     "publisher": "NASA",
     "source_type": "nasa_report",
-    "title": "Results from On-Board CSA-CP and CDM Sensor Readings During BASS-II"
+    "title": "Results from On-Board CSA-CP and CDM Sensor Readings During BASS-II",
+    "url": "https://ntrs.nasa.gov/api/citations/20150019858/downloads/20150019858.pdf"
   },
   {
     "description": "PSI investigation record for BASS-II.",
@@ -55,6 +56,15 @@
     "source_type": "dataset",
     "title": "BASS-II investigation record (PSI-25)",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25"
+  },
+  {
+    "description": "PSI investigation record for BASS.",
+    "doi": "10.60555/58h4-dy80",
+    "id": "src-bass-psi-26",
+    "publisher": "NASA Physical Sciences Informatics",
+    "source_type": "dataset",
+    "title": "BASS investigation record (PSI-26)",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26"
   },
   {
     "description": "Source for the BASS-M investigation.",
@@ -126,5 +136,85 @@
     "source_type": "dataset",
     "title": "ACME CFI-G investigation record (PSI-159)",
     "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159"
+  },
+  {
+    "description": "Background resource from the challenge Resources list, not evidence for any experiment. The Physical Sciences Informatics (PSI) data repository, the source of the data upon which the FLAREX app is based; it holds the combustion investigation records, publications and data files.",
+    "id": "src-resource-psi-repository",
+    "publisher": "NASA Physical Sciences Informatics",
+    "source_type": "website",
+    "title": "PSI Data Repository: Combustion Science (Physical Sciences Informatics)",
+    "url": "https://psi.nasa.gov/physci/repo/"
+  },
+  {
+    "description": "Background resource from the challenge Resources list, not evidence for any experiment. Basic information about most of the combustion investigations for which data is found in the PSI Data Repository, including current and archived experiments and the ISS facilities.",
+    "id": "src-resource-nasa-combustion-science",
+    "publisher": "NASA Glenn Research Center",
+    "source_type": "website",
+    "title": "NASA Combustion Science",
+    "url": "https://www1.grc.nasa.gov/space/iss-research/iss-fcf/combustion-science/acme/publications/"
+  },
+  {
+    "description": "Background resource from the challenge Resources list, not evidence for any experiment. A 3.6-minute video clip from 2018 introducing NASA combustion research on the International Space Station.",
+    "id": "src-resource-sciencecasts-combustion-iss",
+    "publisher": "NASA",
+    "source_type": "website",
+    "title": "NASA ScienceCasts: The Power of Studying Combustion on the ISS",
+    "url": "https://www.youtube.com/watch?v=W1oXykoz9zg"
+  },
+  {
+    "description": "Background resource from the challenge Resources list, not evidence for any experiment. A 2015 review of NASA combustion research conducted on, or planned for, the International Space Station (October 2015 edition, NASA ISS Program Science Office).",
+    "id": "src-resource-researchers-guide-combustion",
+    "publisher": "NASA",
+    "source_type": "website",
+    "title": "A Researcher's Guide to International Space Station Combustion Science",
+    "url": "https://www.nasa.gov/science-research/for-researchers/a-researchers-guide-to-combustion-science/"
+  },
+  {
+    "description": "Background resource from the challenge Resources list, not evidence for any experiment. Information about the Apollo 1 crew mission, the fire that erupted during a pre-launch test killing the crew, the investigation, and the lessons learned.",
+    "id": "src-resource-apollo-1",
+    "publisher": "NASA",
+    "source_type": "website",
+    "title": "Apollo 1",
+    "url": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-1"
+  },
+  {
+    "description": "Background resource from the challenge Resources list, not evidence for any experiment. Information about the Apollo 13 crew and mission, the oxygen tank explosion during the flight to the Moon, the investigation, and the lessons learned.",
+    "id": "src-resource-apollo-13",
+    "publisher": "NASA",
+    "source_type": "website",
+    "title": "Apollo 13",
+    "url": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-13"
+  },
+  {
+    "description": "Background resource from the challenge Resources list, not evidence for any experiment. Basic information about the fire caused by an oxygen generator failure that erupted within the Russian space station Mir in 1997.",
+    "id": "src-resource-mir-fire-1997",
+    "publisher": "NASA",
+    "source_type": "website",
+    "title": "25 Years Ago: Fire Aboard Space Station Mir",
+    "url": "https://www.nasa.gov/history/25-years-ago-fire-aboard-space-station-mir/"
+  },
+  {
+    "description": "Background resource from the challenge Resources list, not evidence for any experiment. Basic information about the 1970s adaptation of spacesuit technology to improve firefighters' air tanks and breathing gear (NASA Spinoff, originally published 1976).",
+    "id": "src-resource-firemans-air-tanks",
+    "publisher": "NASA Spinoff",
+    "source_type": "website",
+    "title": "Fireman's Air Tanks",
+    "url": "https://spinoff.nasa.gov/node/9582"
+  },
+  {
+    "description": "Background resource from the challenge Resources list, not evidence for any experiment. Basic information about the 1970s smoke detector developed for the shuttle that, discriminating between smoke and dust, results in less nuisance alarms, with industrial applications such as mining (NASA Spinoff, originally published 1978).",
+    "id": "src-resource-fire-detector",
+    "publisher": "NASA Spinoff",
+    "source_type": "website",
+    "title": "Fire Detector",
+    "url": "https://spinoff.nasa.gov/node/9407"
+  },
+  {
+    "description": "Background resource from the challenge Resources list, not evidence for any experiment. Basic information about the 1980s application of NASA spacesuit technology to improve firefighter clothing (NASA Spinoff, originally published 1982).",
+    "id": "src-resource-fire-attire",
+    "publisher": "NASA Spinoff",
+    "source_type": "website",
+    "title": "New Technology for the Fire Attire",
+    "url": "https://spinoff.nasa.gov/node/9918"
   }
 ]
