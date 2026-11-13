@@ -4,12 +4,11 @@ import { LoadingState } from '../../components/feedback/LoadingState'
 import { ErrorState } from '../../components/feedback/ErrorState'
 import { EmptyState } from '../../components/feedback/EmptyState'
 import { useExperiments } from '../../hooks/useExperiments'
-import { useHardware } from '../../hooks/useHardware'
-import { useCompareExperiments, useCompareHardware, useCompareMeasurements } from '../../hooks/useComparisons'
-import type { ExperimentComparison, HardwareComparison, MeasurementComparison, ParameterComparison } from '../../types/comparison'
+import { useCompareExperiments, useCompareMeasurements } from '../../hooks/useComparisons'
+import type { ExperimentComparison, MeasurementComparison, ParameterComparison } from '../../types/comparison'
 
-type ComparisonType = 'experiments' | 'hardware' | 'measurements'
-type ComparisonResult = ExperimentComparison | HardwareComparison | MeasurementComparison
+type ComparisonType = 'experiments' | 'measurements'
+type ComparisonResult = ExperimentComparison | MeasurementComparison
 
 function ParameterRows({ parameters }: { parameters: ParameterComparison[] }) {
   if (parameters.length === 0) return <p className="text-sm text-slate-500">No parameters compared.</p>
@@ -58,22 +57,17 @@ export function ComparisonPanel() {
   const [result, setResult] = useState<ComparisonResult | null>(null)
   const [error, setError] = useState<string | null>(null)
   const experiments = useExperiments()
-  const hardware = useHardware()
   const compareExperiments = useCompareExperiments()
-  const compareHardware = useCompareHardware()
   const compareMeasurements = useCompareMeasurements()
   const experimentItems = experiments.data?.items ?? []
-  const hardwareItems = hardware.data?.items ?? []
   const measurementItems = experimentItems.flatMap((e) =>
     e.measurements.map((m) => ({ id: m.id, label: `${e.name} — ${m.parameter_name}` })),
   )
   const items =
     kind === 'experiments'
       ? experimentItems.map((e) => ({ id: e.id, label: e.name }))
-      : kind === 'hardware'
-        ? hardwareItems.map((h) => ({ id: h.id, label: h.name }))
-        : measurementItems
-  const pending = compareExperiments.isPending || compareHardware.isPending || compareMeasurements.isPending
+      : measurementItems
+  const pending = compareExperiments.isPending || compareMeasurements.isPending
 
   function toggle(id: string) {
     setError(null)
@@ -90,8 +84,6 @@ export function ComparisonPanel() {
     try {
       if (kind === 'experiments') {
         setResult(await compareExperiments.mutateAsync({ experiment_ids: selected, parameters: null, include_conditions: true }))
-      } else if (kind === 'hardware') {
-        setResult(await compareHardware.mutateAsync({ hardware_ids: selected, fields: null }))
       } else {
         setResult(await compareMeasurements.mutateAsync({ measurement_ids: selected, parameter_names: null }))
       }
@@ -107,13 +99,12 @@ export function ComparisonPanel() {
     setError(null)
   }
 
-  if (experiments.isPending || hardware.isPending) return <LoadingState message="Loading records..." />
+  if (experiments.isPending) return <LoadingState message="Loading records..." />
   return (
     <div className="space-y-4 rounded border border-slate-700 bg-slate-900 p-4">
       <h3 className="text-base font-semibold text-white">Compare</h3>
       <div className="flex gap-2">
         <button type="button" onClick={() => changeKind('experiments')} className={`rounded border px-3 py-1 text-sm ${kind === 'experiments' ? 'border-cyan-600 bg-cyan-950 text-cyan-300' : 'border-slate-600 text-slate-300'}`}>Experiments</button>
-        <button type="button" onClick={() => changeKind('hardware')} className={`rounded border px-3 py-1 text-sm ${kind === 'hardware' ? 'border-cyan-600 bg-cyan-950 text-cyan-300' : 'border-slate-600 text-slate-300'}`}>Hardware</button>
         <button type="button" onClick={() => changeKind('measurements')} className={`rounded border px-3 py-1 text-sm ${kind === 'measurements' ? 'border-cyan-600 bg-cyan-950 text-cyan-300' : 'border-slate-600 text-slate-300'}`}>Measurements</button>
       </div>
       {items.length === 0 ? (
@@ -144,24 +135,12 @@ export function ComparisonPanel() {
           <p className="text-sm text-slate-300">Comparison: {result.comparison_id ?? 'n/a'} · {result.category}</p>
           <p className="text-sm text-slate-300">{result.explanation}</p>
           {'parameters' in result ? <ParameterRows parameters={result.parameters} /> : null}
-          {'fields' in result ? <ParameterRows parameters={result.fields} /> : null}
           {'conditions' in result && result.conditions.length > 0 ? (
             <div>
               <p className="text-xs text-slate-400">Conditions</p>
               <ul className="mt-1 space-y-1 text-sm text-slate-300">
                 {result.conditions.map((c) => (
                   <li key={c.condition_name}>{c.condition_name}: {c.status} — {c.reason}</li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
-          {'shared_measurements' in result ? <ListBlock title="Shared measurements" items={result.shared_measurements} /> : null}
-          {'unique_measurements' in result ? (
-            <div>
-              <p className="text-xs text-slate-400">Unique measurements</p>
-              <ul className="mt-1 space-y-1 text-sm text-slate-300">
-                {Object.entries(result.unique_measurements).map(([id, list]) => (
-                  <li key={id}>{id}: {list.length > 0 ? list.join(', ') : 'none'}</li>
                 ))}
               </ul>
             </div>

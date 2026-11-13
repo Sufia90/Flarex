@@ -57,7 +57,7 @@ export function useSearchRelationships(filters: RelationshipSearchFilters, enabl
 }
 
 export function useRelationshipsByExperiment(experimentId: string, enabled = true) {
-  return useQuery<ExperimentHardwareRelationship[], Error>({
+  return useQuery<PaginatedList<ExperimentHardwareRelationship>, Error>({
     queryKey: relationshipsByExperimentQueryKey(experimentId),
     queryFn: ({ signal }) => getRelationshipsByExperiment(experimentId, signal),
     enabled: enabled && experimentId !== '',
@@ -65,7 +65,7 @@ export function useRelationshipsByExperiment(experimentId: string, enabled = tru
 }
 
 export function useRelationshipsByHardware(hardwareId: string, enabled = true) {
-  return useQuery<ExperimentHardwareRelationship[], Error>({
+  return useQuery<PaginatedList<ExperimentHardwareRelationship>, Error>({
     queryKey: relationshipsByHardwareQueryKey(hardwareId),
     queryFn: ({ signal }) => getRelationshipsByHardware(hardwareId, signal),
     enabled: enabled && hardwareId !== '',

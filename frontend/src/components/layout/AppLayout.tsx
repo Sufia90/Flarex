@@ -3,7 +3,6 @@ import { NavLink, Outlet } from 'react-router'
 const navItems = [
   { to: '/', label: 'Overview' },
   { to: '/experiments', label: 'Experiment Explorer' },
-  { to: '/hardware', label: 'Hardware Explorer' },
   { to: '/compare', label: 'Compare & Rank' },
   { to: '/fire-safety', label: 'Fire Safety Insights' },
   { to: '/mission-relevance', label: 'Mission Relevance' },

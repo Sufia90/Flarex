@@ -1,0 +1,130 @@
+[
+  {
+    "description": "Principal Investigators: Sandra L. Olson and Paul V. Ferkul (NASA Glenn Research Center). Source for the BASS investigation.",
+    "id": "src-bass-np-2015",
+    "nasa_report_id": "NP-2015-10-034-JSC",
+    "page_section": "Pages 3, 18, 21",
+    "publisher": "NASA",
+    "source_type": "nasa_report",
+    "title": "NASA Combustion Science in Reduced Gravity",
+    "url": "https://www.nasa.gov/wp-content/uploads/2016/05/np-2015-10-034-jsc_combustion_in_reduced_gravity-iss-mini-book-011116-508.pdf"
+  },
+  {
+    "description": "Source for the BASS investigation.",
+    "id": "src-bass-ntrs-20140011099",
+    "nasa_report_id": "NTRS 20140011099",
+    "page_section": "Pages 2, 28-29",
+    "publisher": "NASA",
+    "source_type": "nasa_report",
+    "title": "BASS POIWG Presentation",
+    "url": "https://ntrs.nasa.gov/api/citations/20140011099/downloads/20140011099.pdf"
+  },
+  {
+    "description": "By J. Marcum, S. Olson, P. Ferkul, Oct 2021. Source for the BASS-II investigation.",
+    "id": "src-bass-ii-tm-20210011385",
+    "nasa_report_id": "NASA/TM-20210011385",
+    "page_section": "Pages 2-3, 64",
+    "publisher": "NASA",
+    "source_type": "nasa_report",
+    "title": "BASS-II Summary Report",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25"
+  },
+  {
+    "description": "Source for the BASS-II investigation.",
+    "id": "src-bass-ii-ntrs-20150008961",
+    "nasa_report_id": "NTRS 20150008961",
+    "page_section": "Pages 1-3",
+    "publisher": "NASA",
+    "source_type": "nasa_report",
+    "title": "Microgravity Flammability of PMMA Rods in Concurrent Flow",
+    "url": "https://ntrs.nasa.gov/api/citations/20150008961/downloads/20150008961.pdf"
+  },
+  {
+    "description": "Source for the BASS-II investigation. No direct download URL was given in the research team's JSON, so none is recorded.",
+    "id": "src-bass-ii-ntrs-20150019858",
+    "nasa_report_id": "NTRS 20150019858",
+    "publisher": "NASA",
+    "source_type": "nasa_report",
+    "title": "Results from On-Board CSA-CP and CDM Sensor Readings During BASS-II"
+  },
+  {
+    "description": "PSI investigation record for BASS-II.",
+    "doi": "10.60555/4qc4-de67",
+    "id": "src-bass-ii-psi-25",
+    "publisher": "NASA Physical Sciences Informatics",
+    "source_type": "dataset",
+    "title": "BASS-II investigation record (PSI-25)",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25"
+  },
+  {
+    "description": "Source for the BASS-M investigation.",
+    "id": "src-bass-m-grc",
+    "publisher": "NASA Glenn Research Center / ISS Payload Operations Center",
+    "source_type": "website",
+    "title": "Burning and Suppression of Solids-Milliken (BASS-M) Overview",
+    "url": "https://gipoc.grc.nasa.gov/wp/msg/bass-m/"
+  },
+  {
+    "description": "PSI investigation record for FLEX.",
+    "doi": "10.60555/mbq8-0451",
+    "id": "src-flex-psi-69",
+    "publisher": "NASA Physical Sciences Informatics",
+    "source_type": "dataset",
+    "title": "FLEX investigation record (PSI-69)",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69"
+  },
+  {
+    "description": "PSI investigation record for SAFFIRE-II.",
+    "doi": "10.60555/2chp-m469",
+    "id": "src-saffire-ii-psi-99",
+    "publisher": "NASA Physical Sciences Informatics",
+    "source_type": "dataset",
+    "title": "SAFFIRE-II investigation record (PSI-99)",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-99"
+  },
+  {
+    "description": "PSI investigation record for SAFFIRE-III.",
+    "doi": "10.60555/040q-4h36",
+    "id": "src-saffire-iii-psi-100",
+    "publisher": "NASA Physical Sciences Informatics",
+    "source_type": "dataset",
+    "title": "SAFFIRE-III investigation record (PSI-100)",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-100"
+  },
+  {
+    "description": "PSI investigation record for SAME.",
+    "doi": "10.60555/gd4k-8h62",
+    "id": "src-same-psi-102",
+    "publisher": "NASA Physical Sciences Informatics",
+    "source_type": "dataset",
+    "title": "SAME investigation record (PSI-102)",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102"
+  },
+  {
+    "description": "PSI investigation record for SAME-R.",
+    "doi": "10.60555/2np7-jv14",
+    "id": "src-same-r-psi-101",
+    "publisher": "NASA Physical Sciences Informatics",
+    "source_type": "dataset",
+    "title": "SAME-R investigation record (PSI-101)",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-101"
+  },
+  {
+    "description": "PSI investigation record for SPICE.",
+    "doi": "10.60555/9kbh-e962",
+    "id": "src-spice-psi-107",
+    "publisher": "NASA Physical Sciences Informatics",
+    "source_type": "dataset",
+    "title": "SPICE investigation record (PSI-107)",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-107"
+  },
+  {
+    "description": "PSI investigation record for ACME CFI-G.",
+    "doi": "10.60555/cyt1-kh64",
+    "id": "src-acme-psi-159",
+    "publisher": "NASA Physical Sciences Informatics",
+    "source_type": "dataset",
+    "title": "ACME CFI-G investigation record (PSI-159)",
+    "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159"
+  }
+]

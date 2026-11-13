@@ -3,7 +3,6 @@ import { useSearchParams } from 'react-router'
 import { LoadingState } from '../components/feedback/LoadingState'
 import { ErrorState } from '../components/feedback/ErrorState'
 import { EmptyState } from '../components/feedback/EmptyState'
-import { ExperimentFilters, emptyExperimentFilters, type ExperimentFilterValues } from '../features/experiments/ExperimentFilters'
 import { ExperimentDetail } from '../features/experiments/ExperimentDetail'
 import { useExperiment, useSearchExperiments } from '../hooks/useExperiments'
 
@@ -21,28 +20,47 @@ function ExperimentDetailView({ id, onClose }: { id: string; onClose: () => void
 
 export function ExperimentExplorerPage() {
   const [searchParams, setSearchParams] = useSearchParams()
-  const [draftFilters, setDraftFilters] = useState<ExperimentFilterValues>(emptyExperimentFilters)
-  const [appliedFilters, setAppliedFilters] = useState<ExperimentFilterValues>(emptyExperimentFilters)
-  const search = useSearchExperiments({ ...appliedFilters, page: 1, page_size: 20 })
+  const [draftQuery, setDraftQuery] = useState('')
+  const [appliedQuery, setAppliedQuery] = useState('')
+  const search = useSearchExperiments({ query: appliedQuery, page: 1, page_size: 20 })
   const selectedId = searchParams.get('id')
   const items = search.data?.items ?? []
-  const isFiltered = Object.values(appliedFilters).some((v) => v !== '')
 
   function onSearch() {
-    setAppliedFilters(draftFilters)
+    setAppliedQuery(draftQuery)
+  }
+
+  function onClear() {
+    setDraftQuery('')
+    setAppliedQuery('')
   }
 
   if (search.isPending) return <LoadingState message="Loading experiments..." />
   if (search.isError) return <ErrorState message="Could not load experiments." onRetry={() => search.refetch()} />
   return (
     <div className="space-y-4">
-      <ExperimentFilters value={draftFilters} onChange={setDraftFilters} onSearch={onSearch} />
+      <form
+        onSubmit={(e) => {
+          e.preventDefault()
+          onSearch()
+        }}
+        className="flex gap-2"
+      >
+        <input
+          className="w-full rounded border border-slate-600 bg-slate-800 px-3 py-2 text-sm text-white"
+          value={draftQuery}
+          onChange={(e) => setDraftQuery(e.target.value)}
+          placeholder="Search experiments by name, fuel, or category..."
+        />
+        <button type="submit" className="rounded bg-cyan-600 px-3 py-2 text-sm text-white">Search</button>
+        <button type="button" onClick={onClear} className="rounded border border-slate-600 px-3 py-2 text-sm text-slate-300">Clear</button>
+      </form>
       {selectedId ? (
         <ExperimentDetailView id={selectedId} onClose={() => setSearchParams({})} />
       ) : items.length === 0 ? (
         <EmptyState
-          title={isFiltered ? 'No experiments match these filters' : 'No experiments yet'}
-          message={isFiltered ? 'Try different filters or clear them.' : 'No experiment records are loaded. Real NASA records will appear here when they are added.'}
+          title={appliedQuery !== '' ? 'No experiments match your search' : 'No experiments yet'}
+          message={appliedQuery !== '' ? 'Try a different search.' : 'No experiment records are loaded. Real NASA records will appear here when they are added.'}
         />
       ) : (
         <div>

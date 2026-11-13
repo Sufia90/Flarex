@@ -52,15 +52,15 @@ export function getRelationship(relationshipId: string, signal?: AbortSignal): P
 export function getRelationshipsByExperiment(
   experimentId: string,
   signal?: AbortSignal,
-): Promise<ExperimentHardwareRelationship[]> {
-  return apiClient.get<ExperimentHardwareRelationship[]>(endpoints.relationships.byExperiment(experimentId), { signal })
+): Promise<PaginatedList<ExperimentHardwareRelationship>> {
+  return apiClient.get<PaginatedList<ExperimentHardwareRelationship>>(endpoints.relationships.byExperiment(experimentId), { signal })
 }
 
 export function getRelationshipsByHardware(
   hardwareId: string,
   signal?: AbortSignal,
-): Promise<ExperimentHardwareRelationship[]> {
-  return apiClient.get<ExperimentHardwareRelationship[]>(endpoints.relationships.byHardware(hardwareId), { signal })
+): Promise<PaginatedList<ExperimentHardwareRelationship>> {
+  return apiClient.get<PaginatedList<ExperimentHardwareRelationship>>(endpoints.relationships.byHardware(hardwareId), { signal })
 }
 
 export function createRelationship(

@@ -1,0 +1,137 @@
+[
+  {
+    "acronym": "MSG",
+    "data_quality": {
+      "notes": "Converted from the research team's BASS JSON on 2026-11-13. The BASS flow duct is described here; it is not a separate hardware record yet."
+    },
+    "description": "Enclosed research facility inside the ISS Destiny module, providing a 255-liter sealed work volume with two levels of containment via negative pressure, HEPA/charcoal/catalyst air filtration, power (+28V DC, +12V DC, -12V DC, +120V DC), and gaseous nitrogen supply. Houses the BASS flow duct, a black anodized rectangular wind tunnel (7.6 cm x 7.6 cm x 17 cm) with an upstream fan, flow restrictors, honeycomb flow straightener, and inlet screen.",
+    "facility_classification": "ISS research facility",
+    "hardware_type": "facility",
+    "id": "msg",
+    "limitations": "Maximum oxygen concentration capped at 21% by volume; cannot test elevated-oxygen/reduced-pressure Exploration Atmospheres.",
+    "name": "Microgravity Science Glovebox",
+    "purpose": "Provides a sealed, controlled work volume aboard the ISS for microgravity combustion experiments such as BASS, BASS-II and BASS-M.",
+    "related_experiment_ids": [
+      "bass",
+      "bass-ii",
+      "bass-m"
+    ],
+    "source_ids": [
+      "src-bass-np-2015"
+    ],
+    "supported_measurements": [
+      "Flame geometry and spread rate",
+      "Flame radiation intensity",
+      "Forced airflow velocity",
+      "Post-burn gas concentrations (CO, CO2, O2)"
+    ]
+  },
+  {
+    "acronym": "CIR",
+    "data_quality": {
+      "notes": "Converted from the verified PSI-69 and PSI-159 pages on 2026-11-13. Verify against the cited NASA sources before marking confirmed."
+    },
+    "description": "Combustion Integrated Rack (CIR), part of the Fluids and Combustion Facility (FCF) aboard the ISS. Houses the Multi-user Droplet Combustion Apparatus (MDCA) and the ACME spherical flame experiments.",
+    "facility_classification": "ISS research facility",
+    "hardware_type": "facility",
+    "id": "cir",
+    "name": "Combustion Integrated Rack",
+    "purpose": "Provides a controlled microgravity combustion research facility aboard the ISS for droplet combustion and gaseous flame experiments such as FLEX and ACME CFI-G.",
+    "related_experiment_ids": [
+      "flex",
+      "acme-cfi-g"
+    ],
+    "source_ids": [
+      "src-flex-psi-69",
+      "src-acme-psi-159"
+    ],
+    "supported_measurements": [
+      "Droplet burning rates",
+      "Flame extinction behaviour",
+      "Heat radiation",
+      "Soot levels",
+      "Temperature profiles",
+      "Cool diffusion flame occurrence",
+      "Hot ignition",
+      "Burn time",
+      "Flame colour"
+    ]
+  },
+  {
+    "acronym": "MDCA",
+    "data_quality": {
+      "notes": "Converted from the verified PSI-69 page on 2026-11-13. The PSI-69 page spells the name with a typo (Appartatus); the correct spelling is used here. Verify against the cited NASA source before marking confirmed."
+    },
+    "description": "Multi-user Droplet Combustion Apparatus (MDCA), the droplet combustion apparatus inside the Combustion Integrated Rack. Used for the FLEX droplet flame extinguishment tests.",
+    "hardware_type": "apparatus",
+    "id": "mdca",
+    "name": "Multi-user Droplet Combustion Apparatus",
+    "parent_hardware_id": "cir",
+    "purpose": "Ignites and observes relatively large liquid fuel droplets in microgravity to determine flammability limits and suppressant effectiveness.",
+    "related_experiment_ids": [
+      "flex"
+    ],
+    "source_ids": [
+      "src-flex-psi-69"
+    ],
+    "supported_measurements": [
+      "Droplet burning rates",
+      "Flame extinction behaviour",
+      "Visible flame extinction diameter",
+      "Burn time"
+    ]
+  },
+  {
+    "acronym": "SAFFIRE",
+    "data_quality": {
+      "notes": "Converted from the verified PSI-99 and PSI-100 pages on 2026-11-13. Verify against the cited NASA sources before marking confirmed."
+    },
+    "description": "Spacecraft Fire Experiment (SAFFIRE) module: a large-scale flame-spread experiment flown in the Cygnus pressurized cargo module after it deberthed from the ISS. A sample card sits in the middle of a large flow duct, with air drawn through by fans and flow straighteners. Two cameras capture flame images; thermocouples, radiometers, solid-state sensors and anemometers record temperatures, radiation, gas composition and flow velocity.",
+    "hardware_type": "apparatus",
+    "id": "saffire",
+    "name": "Spacecraft Fire Experiment module",
+    "purpose": "Studies how rapidly a large-scale fire grows in low gravity and the low-g flammability limits of spacecraft materials, in an expendable vehicle with no risk to crew.",
+    "related_experiment_ids": [
+      "saffire-ii",
+      "saffire-iii"
+    ],
+    "source_ids": [
+      "src-saffire-ii-psi-99",
+      "src-saffire-iii-psi-100"
+    ],
+    "supported_measurements": [
+      "Flame growth rate",
+      "Low-g flammability limits",
+      "Flame images",
+      "Flow, flame and plume temperatures",
+      "Flame radiation",
+      "Pressure, CO2 and O2 mole fraction",
+      "Flow velocity"
+    ]
+  },
+  {
+    "data_quality": {
+      "notes": "Converted from the verified PSI-102 and PSI-101 pages on 2026-11-13. The PSI pages spell the name 'Comparitive'; the correct spelling is used here. Verify against the cited NASA sources before marking confirmed."
+    },
+    "description": "Comparative Soot Diagnostic Hardware: the smoke diagnostic hardware used by SAME and SAME-R in the Glovebox, with a near-field hardware section and a Far Field Box attached to the Glovebox. SAME-R reused the SAME on-orbit hardware, with the M-pass instrument replacing one Commercial Diagnostic Enclosure.",
+    "hardware_type": "apparatus",
+    "id": "same-hardware",
+    "name": "Comparative Soot Diagnostic Hardware",
+    "purpose": "Generates smoke from overheated spacecraft materials under controlled conditions and measures smoke particulate size distribution and smoke-detector response in microgravity.",
+    "related_experiment_ids": [
+      "same",
+      "same-r"
+    ],
+    "source_ids": [
+      "src-same-psi-102",
+      "src-same-r-psi-101"
+    ],
+    "supported_measurements": [
+      "Smoke particulate size distribution",
+      "Primary and aggregate particle dimensions",
+      "Mass loss / weight loss rate",
+      "Particle aging time",
+      "Detector response"
+    ]
+  }
+]

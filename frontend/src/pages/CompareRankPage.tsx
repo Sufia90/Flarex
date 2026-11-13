@@ -4,7 +4,7 @@ import { RankingPanel } from '../features/comparison/RankingPanel'
 export function CompareRankPage() {
   return (
     <div className="space-y-6">
-      <p className="text-sm text-slate-300">Compare experiments, hardware, or measurements with the backend services. Rankings use one documented criterion at a time and never invent weights or scores.</p>
+      <p className="text-sm text-slate-300">Compare experiments or measurements. Rankings use one documented criterion at a time and never invent weights or scores.</p>
       <ComparisonPanel />
       <RankingPanel />
     </div>

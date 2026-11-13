@@ -1,8 +1,6 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router'
 import { EvidenceStatusBadge } from '../../components/common/EvidenceStatusBadge'
-import { useHardware } from '../../hooks/useHardware'
-import { useRelationshipsByExperiment } from '../../hooks/useRelationships'
 import { useMissionRelevanceForExperiment } from '../../hooks/useMissionRelevance'
 import { useInsightsForExperiment } from '../../hooks/useFireSafety'
 import type { Experiment, Finding, Measurement } from '../../types/experiment'
@@ -87,13 +85,10 @@ function MissionRow({ experimentId, mission, pending, error, data }: { experimen
 }
 
 export function ExperimentDetail({ experiment }: { experiment: Experiment }) {
-  const hardwareList = useHardware()
-  const rels = useRelationshipsByExperiment(experiment.id)
   const iss = useMissionRelevanceForExperiment(experiment.id, 'ISS')
   const moon = useMissionRelevanceForExperiment(experiment.id, 'Moon')
   const mars = useMissionRelevanceForExperiment(experiment.id, 'Mars')
   const insights = useInsightsForExperiment(experiment.id)
-  const hardwareById = new Map((hardwareList.data?.items ?? []).map((h) => [h.id, h.name]))
   const c = experiment.conditions
   return (
     <div className="space-y-4">
@@ -159,24 +154,6 @@ export function ExperimentDetail({ experiment }: { experiment: Experiment }) {
           <ul className="space-y-2">
             {experiment.findings.map((f) => (
               <FindingRow key={f.id} f={f} />
-            ))}
-          </ul>
-        )}
-      </Section>
-      <Section title="Hardware">
-        {rels.isPending ? (
-          <p className="text-sm text-slate-400">Loading relationships...</p>
-        ) : (rels.data ?? []).length === 0 ? (
-          <p className="text-sm text-slate-500">No linked hardware yet.</p>
-        ) : (
-          <ul className="space-y-1">
-            {(rels.data ?? []).map((r) => (
-              <li key={r.id} className="text-sm text-white">
-                <Link className="text-cyan-300" to={`/hardware?id=${encodeURIComponent(r.hardware_id)}`}>
-                  {hardwareById.get(r.hardware_id) ?? r.hardware_id}
-                </Link>
-                <span className="text-slate-400"> · {r.relationship_type}</span>
-              </li>
             ))}
           </ul>
         )}

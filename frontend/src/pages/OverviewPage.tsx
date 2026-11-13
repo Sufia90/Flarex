@@ -7,8 +7,6 @@ import { EmptyState } from '../components/feedback/EmptyState'
 import { ConnectionUnavailable } from '../components/feedback/ConnectionUnavailable'
 import { useHealth } from '../hooks/useHealth'
 import { useExperiments } from '../hooks/useExperiments'
-import { useHardware } from '../hooks/useHardware'
-import { useRelationships } from '../hooks/useRelationships'
 import { useFireSafetySummary } from '../hooks/useFireSafety'
 import { isApiError } from '../api/errors'
 
@@ -19,11 +17,9 @@ const CategoryBarChart = lazy(() =>
 export function OverviewPage() {
   const health = useHealth()
   const experiments = useExperiments()
-  const hardware = useHardware()
-  const relationships = useRelationships()
   const summary = useFireSafetySummary()
 
-  if (health.isPending || experiments.isPending || hardware.isPending || relationships.isPending || summary.isPending) {
+  if (health.isPending || experiments.isPending || summary.isPending) {
     return <LoadingState message="Loading overview..." />
   }
   if (health.isError) {
@@ -33,19 +29,17 @@ export function OverviewPage() {
     }
     return <ErrorState message="Could not reach the backend." onRetry={() => health.refetch()} />
   }
-  const failed = [experiments, hardware, relationships, summary].find((q) => q.isError)
+  const failed = [experiments, summary].find((q) => q.isError)
   if (failed) {
-    return <ErrorState message="Could not load overview data." onRetry={() => { experiments.refetch(); hardware.refetch(); relationships.refetch(); summary.refetch() }} />
+    return <ErrorState message="Could not load overview data." onRetry={() => { experiments.refetch(); summary.refetch() }} />
   }
   const counts = {
     experiments: experiments.data?.total ?? 0,
-    hardware: hardware.data?.total ?? 0,
-    relationships: relationships.data?.total ?? 0,
     prevention: summary.data?.prevention_count ?? 0,
     detection: summary.data?.detection_count ?? 0,
     suppression: summary.data?.suppression_count ?? 0,
   }
-  const hasRecords = counts.experiments + counts.hardware + counts.relationships > 0
+  const hasRecords = counts.experiments > 0
   return (
     <div className="space-y-6">
       <p className="text-sm text-slate-300">Backend status: {health.data?.status ?? 'unknown'} ({health.data?.service ?? ''})</p>
@@ -55,13 +49,12 @@ export function OverviewPage() {
           <CategoryBarChart data={[{ name: 'Prevention', count: counts.prevention }, { name: 'Detection', count: counts.detection }, { name: 'Suppression', count: counts.suppression }]} title="Fire safety insights by category" />
         </Suspense>
       ) : (
-        <EmptyState title="No NASA research records loaded yet" message="The backend is connected, but no experiment, hardware, or relationship records are loaded. Real NASA records will appear here when they are added." />
+        <EmptyState title="No NASA research records loaded yet" message="The backend is connected, but no experiment records are loaded. Real NASA records will appear here when they are added." />
       )}
       <div>
         <h2 className="text-base font-semibold text-white">Sections</h2>
         <ul className="mt-2 space-y-1 text-sm">
           <li><Link className="text-cyan-300 underline" to="/experiments">Experiment Explorer</Link></li>
-          <li><Link className="text-cyan-300 underline" to="/hardware">Hardware Explorer</Link></li>
           <li><Link className="text-cyan-300 underline" to="/compare">Compare & Rank</Link></li>
           <li><Link className="text-cyan-300 underline" to="/fire-safety">Fire Safety Insights</Link></li>
           <li><Link className="text-cyan-300 underline" to="/mission-relevance">Mission Relevance</Link></li>

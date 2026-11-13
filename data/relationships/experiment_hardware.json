@@ -1,0 +1,90 @@
+[
+  {
+    "experiment_id": "bass",
+    "hardware_id": "msg",
+    "id": "rel-bass-msg",
+    "relationship_type": "used_in",
+    "role": "BASS experiments ran inside the MSG work volume using the BASS flow duct",
+    "source_id": "src-bass-np-2015"
+  },
+  {
+    "experiment_id": "bass-ii",
+    "hardware_id": "msg",
+    "id": "rel-bass-ii-msg",
+    "relationship_type": "used_in",
+    "role": "BASS-II experiments ran inside the MSG work volume using the BASS-II flow duct",
+    "source_id": "src-bass-ii-tm-20210011385"
+  },
+  {
+    "experiment_id": "bass-m",
+    "hardware_id": "msg",
+    "id": "rel-bass-m-msg",
+    "relationship_type": "used_in",
+    "role": "BASS-M textile tests ran inside the MSG work volume using the BASS flow duct",
+    "source_id": "src-bass-m-grc"
+  },
+  {
+    "experiment_id": "flex",
+    "hardware_id": "cir",
+    "id": "rel-flex-cir",
+    "relationship_type": "used_in",
+    "role": "FLEX droplet tests ran in the Combustion Integrated Rack using the Multi-user Droplet Combustion Apparatus",
+    "source_id": "src-flex-psi-69"
+  },
+  {
+    "experiment_id": "flex",
+    "hardware_id": "mdca",
+    "id": "rel-flex-mdca",
+    "relationship_type": "used_in",
+    "role": "FLEX droplet tests used the Multi-user Droplet Combustion Apparatus inside the CIR",
+    "source_id": "src-flex-psi-69"
+  },
+  {
+    "experiment_id": "acme-cfi-g",
+    "hardware_id": "cir",
+    "id": "rel-acme-cir",
+    "relationship_type": "used_in",
+    "role": "ACME CFI-G spherical flame tests ran in the Combustion Integrated Rack",
+    "source_id": "src-acme-psi-159"
+  },
+  {
+    "experiment_id": "saffire-ii",
+    "hardware_id": "saffire",
+    "id": "rel-saffire-ii-saffire",
+    "relationship_type": "used_in",
+    "role": "SAFFIRE-II large-scale flame-spread tests ran in the SAFFIRE module in the Cygnus pressurized cargo module after deberthing from ISS",
+    "source_id": "src-saffire-ii-psi-99"
+  },
+  {
+    "experiment_id": "saffire-iii",
+    "hardware_id": "saffire",
+    "id": "rel-saffire-iii-saffire",
+    "relationship_type": "used_in",
+    "role": "SAFFIRE-III large-scale flame-spread tests ran in the SAFFIRE module in the Cygnus pressurized cargo module after deberthing from ISS",
+    "source_id": "src-saffire-iii-psi-100"
+  },
+  {
+    "experiment_id": "same",
+    "hardware_id": "same-hardware",
+    "id": "rel-same-same-hardware",
+    "relationship_type": "used_in",
+    "role": "SAME smoke measurements used the Comparative Soot Diagnostic Hardware in the Glovebox",
+    "source_id": "src-same-psi-102"
+  },
+  {
+    "experiment_id": "same-r",
+    "hardware_id": "same-hardware",
+    "id": "rel-same-r-same-hardware",
+    "relationship_type": "used_in",
+    "role": "SAME-R reused the SAME on-orbit hardware, with the M-pass instrument replacing one Commercial Diagnostic Enclosure",
+    "source_id": "src-same-r-psi-101"
+  },
+  {
+    "experiment_id": "spice",
+    "hardware_id": "msg",
+    "id": "rel-spice-msg",
+    "relationship_type": "used_in",
+    "role": "SPICE flames were studied in the SPICE apparatus inside the Microgravity Science Glovebox",
+    "source_id": "src-spice-psi-107"
+  }
+]

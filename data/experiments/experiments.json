@@ -1,0 +1,1461 @@
+[
+  {
+    "acronym": "BASS",
+    "combustion_type": "Diffusion flame combustion in opposed and concurrent low-velocity forced convective flow",
+    "conditions": {
+      "airflow_direction": "opposed and concurrent",
+      "airflow_unit": "cm/s",
+      "ambient_pressure": 101.3,
+      "fuel_material": "Polymethylmethacrylate (PMMA / acrylic) spheres (2 cm diameter) and flat slabs; Cotton-fiberglass composite fabric sheets (2 cm wide); Porous wax slabs; Wax candles",
+      "gravity_condition": "microgravity",
+      "other_conditions": {
+        "airflow_velocity_range": "up to 40 cm/s",
+        "oxygen_concentration_range": "17% to 21% by volume"
+      },
+      "oxygen_basis": "by volume",
+      "oxygen_unit": "%",
+      "pressure_unit": "kPa",
+      "sample_dimensions": "PMMA spheres 2 cm diameter; cotton-fiberglass fabric sheets 2 cm wide",
+      "sample_geometry": "Spheres and flat slabs"
+    },
+    "data_quality": {
+      "data_completeness": "partial",
+      "notes": "Converted from the research team's BASS JSON on 2026-11-13. Oxygen and airflow are ranges in the source, kept in other_conditions and as interpreted range measurements. Verify against the cited NASA sources before marking confirmed. Verification check 2026-11-13: partially documented. Identity, MSG/ISS and airflow up to 40 cm/s match the PSI-26 page, but all measurements, oxygen and pressure values and all four findings cannot be checked against the PSI page (they cite NASA report NP-2015-10-034-JSC, not read here). The fuel list and sample geometry differ from the PSI page in places, and Moon/Mars applicability is not on the PSI page. Data fix 2026-11-13: airflow was written as a range '0 to 40 cm/s'; the PSI-26 page only states airflow speeds up to 40 cm/s, so the value now reads 'up to 40 cm/s'. No lower bound is stated by the source.",
+      "verification_status": "partially_documented"
+    },
+    "description": "Microgravity solid-fuel combustion and fire safety investigation in the Microgravity Science Glovebox (MSG) aboard the ISS.",
+    "findings": [
+      {
+        "experiment_id": "bass",
+        "fire_safety_relevance": [
+          "suppression"
+        ],
+        "id": "bass-f1",
+        "observation": "Gas-phase flame structure responds almost instantaneously to changes in forced airflow velocity, whereas thick solid fuels retain substantial heat long after flame size decreases.",
+        "source_id": "src-bass-np-2015",
+        "title": "Flame responds instantly to airflow, thick solids keep their heat"
+      },
+      {
+        "experiment_id": "bass",
+        "fire_safety_relevance": [
+          "detection",
+          "suppression"
+        ],
+        "id": "bass-f2",
+        "observation": "At ultra-low airflow speeds (< 1 cm/s), flames transition to a dim, soot-free blue state that can persist for extended periods without extinguishing until airflow is completely stopped. A 15 mm PMMA sample persisted as a ~1 cm dim blue flame at low airflow and extinguished only after airflow was completely shut off to 0 cm/s.",
+        "source_id": "src-bass-np-2015",
+        "title": "Dim blue flame persists at ultra-low airflow until ventilation stops"
+      },
+      {
+        "experiment_id": "bass",
+        "fire_safety_relevance": [
+          "suppression"
+        ],
+        "id": "bass-f3",
+        "observation": "A localized nitrogen jet failed to extinguish a burning 15 mm PMMA sample because the thick solid fuel stored significant thermal energy; complete extinction required reducing forced airflow to 0 cm/s. Residual solid-phase heat can re-ignite vaporized fuel once the jet dissipates.",
+        "source_id": "src-bass-np-2015",
+        "title": "Localised nitrogen jet can fail on preheated thick solids"
+      },
+      {
+        "experiment_id": "bass",
+        "fire_safety_relevance": [
+          "detection"
+        ],
+        "id": "bass-f4",
+        "observation": "Reducing oxygen concentration from 21% to 17% delays soot formation in PMMA combustion, keeping flames bluer and simplifying validation against numerical combustion models. At 17% O2 and 10-12 cm/s flow, a 2 cm PMMA sphere burns with a predominantly blue flame punctuated by occasional yellowish-red streaks as internal vapor bubbles burst through the flame.",
+        "source_id": "src-bass-np-2015",
+        "title": "Lower oxygen delays soot formation in PMMA"
+      }
+    ],
+    "fire_safety_relevance": [
+      "prevention",
+      "detection",
+      "suppression"
+    ],
+    "fuel_material": "Polymethylmethacrylate (PMMA / acrylic) spheres (2 cm diameter) and flat slabs; Cotton-fiberglass composite fabric sheets (2 cm wide); Porous wax slabs; Wax candles",
+    "hardware_ids": [
+      "msg"
+    ],
+    "id": "bass",
+    "limitations": [
+      "Conducted inside the MSG at nominal 1 atm ISS cabin pressure with maximum oxygen concentrations capped at 21% by volume (unable to test elevated-oxygen/reduced-pressure Exploration Atmospheres)."
+    ],
+    "measurements": [
+      {
+        "experiment_id": "bass",
+        "id": "bass-m1",
+        "measurement_kind": "measured",
+        "parameter_description": "Total cotton-fiberglass fabric burn duration during stepped flow test",
+        "parameter_name": "fabric_burn_duration",
+        "sensor": "Digital Still Camera & MSG Color Video Cameras (Hitachi HV-C20)",
+        "source_id": "src-bass-np-2015",
+        "unit": "s",
+        "value": 90
+      },
+      {
+        "experiment_id": "bass",
+        "id": "bass-m2",
+        "measurement_kind": "measured",
+        "parameter_description": "Minimum acrylic slab burn duration before conductive heat loss extinction, reported as greater than 5 minutes",
+        "parameter_name": "min_acrylic_slab_burn_duration",
+        "sensor": "Digital Still Camera & MSG Color Video Cameras (Hitachi HV-C20)",
+        "source_id": "src-bass-np-2015",
+        "unit": "s",
+        "value": "> 300"
+      },
+      {
+        "experiment_id": "bass",
+        "id": "bass-m3",
+        "measurement_kind": "interpreted",
+        "parameter_description": "Oxygen concentration range tested, by volume (varied below nominal 21% ISS air via nitrogen dilution)",
+        "parameter_name": "oxygen_concentration_range",
+        "source_id": "src-bass-np-2015",
+        "unit": "%",
+        "value": "17 to 21"
+      },
+      {
+        "experiment_id": "bass",
+        "id": "bass-m4",
+        "measurement_kind": "interpreted",
+        "parameter_description": "Forced airflow velocity range tested, stepped down from 10-12 cm/s to < 1 cm/s during quenching tests",
+        "parameter_name": "airflow_velocity_range",
+        "source_id": "src-bass-np-2015",
+        "unit": "cm/s",
+        "value": "up to 40"
+      }
+    ],
+    "mission_applicability": [
+      "ISS",
+      "Moon",
+      "Mars"
+    ],
+    "name": "Burning and Suppression of Solids (BASS)",
+    "nasa_investigation_id": "PSI-26",
+    "related_investigation_ids": [
+      "bass-ii",
+      "bass-m"
+    ],
+    "research_category": "Microgravity Solid-Fuel Combustion and Fire Safety Investigation",
+    "sample_dimensions": "PMMA spheres 2 cm diameter; cotton-fiberglass fabric sheets 2 cm wide",
+    "sample_geometry": "Spheres and flat slabs",
+    "scientific_objective": "Examine the burning and extinction characteristics of a wide variety of solid fuel samples in microgravity, guide strategies for extinguishing accidental fires in space, and provide experimental data to validate combustion computational models for spacecraft fire detection and suppression.",
+    "source_ids": [
+      "src-bass-np-2015",
+      "src-bass-ntrs-20140011099"
+    ],
+    "transferability_note": "Demonstrated that turning off cabin ventilation (reducing airflow to 0 cm/s) starves microgravity solid fires of oxygen transport, whereas relying solely on normal-gravity upward burn tests (NASA-STD-6001 Test 1) does not capture low-flow microgravity persistence."
+  },
+  {
+    "acronym": "BASS-II",
+    "combustion_type": "Opposed-flow and concurrent-flow solid-fuel flame spread and axial stagnation flow burning",
+    "conditions": {
+      "airflow_direction": "opposed and concurrent",
+      "airflow_unit": "cm/s",
+      "ambient_pressure": 101.3,
+      "fuel_material": "Clear and black cast PMMA rods (various diameters including 12.7 mm); Clear cast PMMA flat sheets/slabs (10 cm long x 1-2 cm wide, thickness 1 mm to 5 mm, burned one-sided and two-sided); PMMA large solid spherical sections; Cotton-fiberglass composite fabric sheets; Thin cellulosic fuels",
+      "gravity_condition": "microgravity",
+      "other_conditions": {
+        "airflow_velocity_range": "up to 40 cm/s",
+        "oxygen_concentration_range": "15% to 21% by volume"
+      },
+      "oxygen_basis": "by volume",
+      "oxygen_unit": "%",
+      "pressure_unit": "kPa",
+      "sample_dimensions": "PMMA rods 12.7 mm diameter; PMMA sheets 10 cm long x 1-2 cm wide, 1-5 mm thick",
+      "sample_geometry": "Rods, flat sheets/slabs, and spherical sections"
+    },
+    "data_quality": {
+      "data_completeness": "partial",
+      "notes": "Converted from the research team's BASS JSON on 2026-11-13. Oxygen and airflow are ranges in the source, kept in other_conditions and as interpreted range measurements. Verify against the cited NASA sources before marking confirmed. Verification check 2026-11-13: partially documented. Identity, MSG/ISS and airflow up to 40 cm/s match the PSI-25 page, but all measurements, oxygen and pressure values and all five findings cannot be checked against the PSI page (they cite NASA/TM-20210011385, not read here). Note: the record caps oxygen at 21%, but the PSI-25 experimental table shows 22.2% initial O2 for tests B1-B5. Moon/Mars applicability is not on the PSI page. Data fix 2026-11-13: airflow was written as a range '0 to 40 cm/s'; the PSI-25 page only states airflow speeds up to 40 cm/s, so the value now reads 'up to 40 cm/s'. No lower bound is stated by the source. Note: measurement bass-ii-m2 (max concurrent rod burn duration, 1680 s) comes from the team JSON citing NASA/TM-20210011385, not yet read; confirm it is a burn duration and not a quenching or test duration before treating it as one.",
+      "verification_status": "partially_documented"
+    },
+    "description": "Microgravity solid-fuel flammability, flame spread, and extinction investigation for realistic thicker solid fuels in the Microgravity Science Glovebox (MSG) aboard the ISS.",
+    "findings": [
+      {
+        "experiment_id": "bass-ii",
+        "fire_safety_relevance": [
+          "prevention"
+        ],
+        "id": "bass-ii-f1",
+        "observation": "Normal-gravity upward flammability screening (NASA-STD-6001 Test 1) is not always conservative: materials can sustain opposed-flow flame spread in low-velocity microgravity flows where normal-gravity buoyancy would blow them off or extinguish them.",
+        "source_id": "src-bass-ii-tm-20210011385",
+        "title": "Normal-gravity screening is not always conservative"
+      },
+      {
+        "experiment_id": "bass-ii",
+        "fire_safety_relevance": [
+          "suppression"
+        ],
+        "id": "bass-ii-f2",
+        "observation": "Solid fuels in microgravity exhibit dual extinction limits: a high-velocity kinetic blowoff limit and a low-velocity radiative/conductive quenching limit.",
+        "source_id": "src-bass-ii-tm-20210011385",
+        "title": "Solid fuels have two extinction limits"
+      },
+      {
+        "experiment_id": "bass-ii",
+        "fire_safety_relevance": [
+          "suppression"
+        ],
+        "id": "bass-ii-f3",
+        "observation": "Two-sided burning of intermediate-thickness (1-5 mm) PMMA sheets spreads faster and survives at lower ventilation speeds than one-sided burning due to reduced conductive heat loss.",
+        "source_id": "src-bass-ii-tm-20210011385",
+        "title": "Two-sided burning spreads faster and survives lower airflow"
+      },
+      {
+        "experiment_id": "bass-ii",
+        "fire_safety_relevance": [
+          "detection"
+        ],
+        "id": "bass-ii-f4",
+        "measurement_ids": [
+          "bass-ii-m1"
+        ],
+        "observation": "Pre-quenching flames emit a characteristic 1.1 Hz radiative oscillation signature, providing a potential optical/radiometric indicator of impending extinction.",
+        "source_id": "src-bass-ii-tm-20210011385",
+        "title": "A 1.1 Hz oscillation warns of extinction"
+      },
+      {
+        "experiment_id": "bass-ii",
+        "fire_safety_relevance": [
+          "detection"
+        ],
+        "id": "bass-ii-f5",
+        "observation": "Combustion product toxicity (CO/CO2 ratio) varies substantially with fuel geometry and flow direction, with concurrent rod burning producing the highest CO yield per unit CO2.",
+        "source_id": "src-bass-ii-tm-20210011385",
+        "title": "CO yield depends on fuel shape and flow direction"
+      }
+    ],
+    "fire_safety_relevance": [
+      "prevention",
+      "detection",
+      "suppression"
+    ],
+    "fuel_material": "Clear and black cast PMMA rods (various diameters including 12.7 mm); Clear cast PMMA flat sheets/slabs (10 cm long x 1-2 cm wide, thickness 1 mm to 5 mm, burned one-sided and two-sided); PMMA large solid spherical sections; Cotton-fiberglass composite fabric sheets; Thin cellulosic fuels",
+    "hardware_ids": [
+      "msg"
+    ],
+    "id": "bass-ii",
+    "limitations": [
+      "Restricted to 1 atm ISS cabin pressure and oxygen levels <= 21% O2 inside MSG; cannot directly replicate hypobaric, oxygen-enriched Exploration Atmospheres (e.g., 34% O2 at 8.2 psi)."
+    ],
+    "measurements": [
+      {
+        "experiment_id": "bass-ii",
+        "id": "bass-ii-m1",
+        "measurement_kind": "measured",
+        "parameter_description": "Pre-quenching extinction oscillation frequency measured by radiometer",
+        "parameter_name": "pre_quenching_oscillation_frequency",
+        "sensor": "Radiometer (positioned in downstream top back corner of duct)",
+        "source_id": "src-bass-ii-tm-20210011385",
+        "unit": "Hz",
+        "value": 1.1
+      },
+      {
+        "experiment_id": "bass-ii",
+        "id": "bass-ii-m2",
+        "measurement_kind": "measured",
+        "parameter_description": "Maximum concurrent PMMA rod burn duration",
+        "parameter_name": "max_concurrent_rod_burn_duration",
+        "sensor": "High-Resolution Digital Still Camera & MSG Video Camera (with mirror)",
+        "source_id": "src-bass-ii-tm-20210011385",
+        "unit": "s",
+        "value": 1680
+      },
+      {
+        "experiment_id": "bass-ii",
+        "id": "bass-ii-m3",
+        "measurement_kind": "derived",
+        "parameter_description": "Solid-phase thermal stabilization time for PMMA rods (Fourier number Fo ~ 0.3, alpha = 1.2e-3 cm^2/s)",
+        "parameter_name": "solid_phase_thermal_stabilization_time",
+        "source_id": "src-bass-ii-tm-20210011385",
+        "unit": "s",
+        "value": "25 to 100"
+      },
+      {
+        "experiment_id": "bass-ii",
+        "id": "bass-ii-m4",
+        "measurement_kind": "measured",
+        "parameter_description": "Total intermediate-thickness PMMA sheet tests completed (10 cm length, 1-2 cm width, 1-5 mm thickness)",
+        "parameter_name": "intermediate_pmma_sheet_tests_completed",
+        "source_id": "src-bass-ii-tm-20210011385",
+        "unit": "samples",
+        "value": 20
+      },
+      {
+        "experiment_id": "bass-ii",
+        "id": "bass-ii-m5",
+        "measurement_kind": "interpreted",
+        "parameter_description": "Oxygen concentration range tested, by volume (varied below 21% via MSG working volume nitrogen vitiation)",
+        "parameter_name": "oxygen_concentration_range",
+        "source_id": "src-bass-ii-tm-20210011385",
+        "unit": "%",
+        "value": "15 to 21"
+      },
+      {
+        "experiment_id": "bass-ii",
+        "id": "bass-ii-m6",
+        "measurement_kind": "interpreted",
+        "parameter_description": "Forced airflow velocity range tested; concurrent PMMA rod tests examined up to 40 cm/s, opposed rod tests evaluated down to 1.5 cm/s and lower quenching limits",
+        "parameter_name": "airflow_velocity_range",
+        "source_id": "src-bass-ii-tm-20210011385",
+        "unit": "cm/s",
+        "value": "up to 40"
+      }
+    ],
+    "mission_applicability": [
+      "ISS",
+      "Moon",
+      "Mars"
+    ],
+    "name": "Burning and Suppression of Solids - II (BASS-II)",
+    "nasa_investigation_id": "PSI-25",
+    "related_investigation_ids": [
+      "bass",
+      "bass-m"
+    ],
+    "research_category": "Microgravity Solid-Fuel Flammability, Flame Spread, and Extinction Investigation",
+    "sample_dimensions": "PMMA rods 12.7 mm diameter; PMMA sheets 10 cm long x 1-2 cm wide, 1-5 mm thick",
+    "sample_geometry": "Rods, flat sheets/slabs, and spherical sections",
+    "scientific_objective": "Study ignition, flame growth, flame spread, and extinction limits for realistic (thicker) solid fuels in low-velocity forced flows in microgravity; bridge the gap between normal-gravity NASA-STD-6001 Test #1 screening and actual spacecraft flammability; and provide baseline data for the Solid Fuel Ignition and Extinction (SoFIE) program.",
+    "source_ids": [
+      "src-bass-ii-tm-20210011385",
+      "src-bass-ii-ntrs-20150008961",
+      "src-bass-ii-ntrs-20150019858",
+      "src-bass-ii-psi-25"
+    ],
+    "transferability_note": "Correlated microgravity forced-flow blowoff and quenching limits with normal-gravity mixed-convection and reduced-pressure test data, directly informing the hardware and science requirements for NASA's Solid Fuel Ignition and Extinction (SoFIE) facility."
+  },
+  {
+    "acronym": "BASS-M",
+    "combustion_type": "Forced-convection flame impingement and self-extinguishment testing (untreated starter tab ignites and impinges upon adjacent treated textile)",
+    "conditions": {
+      "airflow_unit": "cm/s",
+      "ambient_pressure": 101.3,
+      "fuel_material": "Untreated cotton textile (control set, 4 samples); Ten (10) proprietary flame-retardant-treated cotton textiles (Milliken & Company, 4 samples each; 44 total samples)",
+      "gravity_condition": "microgravity",
+      "other_conditions": {
+        "airflow_velocity_range": "Multiple low-speed forced convection airflow rates representative of spacecraft cabin ventilation (up to 40 cm/s duct capability)"
+      },
+      "oxygen_basis": "by volume",
+      "oxygen_concentration": 21,
+      "oxygen_unit": "%",
+      "pressure_unit": "kPa",
+      "sample_dimensions": "44 samples: 11 textile types x 4 samples each",
+      "sample_geometry": "Textile sheets"
+    },
+    "data_quality": {
+      "data_completeness": "partial",
+      "notes": "Converted from the research team's BASS JSON on 2026-11-13. Extinction times for individual textiles are not in the source, so none are recorded. BASS-M has no PSI id in the source. Verification check 2026-11-13: unverified. BASS-M has no PSI id and no PSI page, so nothing in this record can be checked against a PSI source. All values come from the research-team JSON and its cited Glenn overview page, which was not verified here.",
+      "verification_status": "unverified"
+    },
+    "description": "Commercial / ISS National Lab microgravity textile flammability investigation in the Microgravity Science Glovebox (MSG) aboard the ISS.",
+    "findings": [
+      {
+        "experiment_id": "bass-m",
+        "fire_safety_relevance": [
+          "prevention"
+        ],
+        "id": "bass-m-f1",
+        "observation": "Provides direct microgravity comparison data for flame-retardant-treated textiles screened using Earth-based upward burning tests (NASA-STD-6001).",
+        "source_id": "src-bass-m-grc",
+        "title": "Direct microgravity comparison for flame-retardant textiles"
+      },
+      {
+        "experiment_id": "bass-m",
+        "fire_safety_relevance": [
+          "suppression"
+        ],
+        "id": "bass-m-f2",
+        "observation": "Demonstrates how forced cabin airflow velocities govern whether flame-retardant cotton fabrics self-extinguish or continue burning after ignition from an adjacent untreated fuel source.",
+        "source_id": "src-bass-m-grc",
+        "title": "Cabin airflow decides whether treated cotton self-extinguishes"
+      },
+      {
+        "experiment_id": "bass-m",
+        "fire_safety_relevance": [
+          "prevention"
+        ],
+        "id": "bass-m-f3",
+        "observation": "Supports the development of improved fire-resistant clothing and fabrics for both astronaut crew wear and terrestrial industrial protective apparel.",
+        "source_id": "src-bass-m-grc",
+        "title": "Basis for better fire-resistant crew clothing"
+      }
+    ],
+    "fire_safety_relevance": [
+      "prevention",
+      "suppression"
+    ],
+    "fuel_material": "Untreated cotton textile (control set, 4 samples); Ten (10) proprietary flame-retardant-treated cotton textiles (Milliken & Company, 4 samples each; 44 total samples)",
+    "hardware_ids": [
+      "msg"
+    ],
+    "id": "bass-m",
+    "limitations": [
+      "Tested at nominal 1 atm ISS air (21% O2); detailed proprietary chemical formulations and specific numerical extinction times for individual Milliken textiles are restricted/not publicly itemized in open NASA summaries."
+    ],
+    "measurements": [
+      {
+        "experiment_id": "bass-m",
+        "id": "bass-m-m1",
+        "measurement_kind": "measured",
+        "parameter_description": "Total textile samples tested: 44 samples (11 textile types x 4 samples per type: 1 untreated control + 10 treated formulations)",
+        "parameter_name": "total_textile_samples_tested",
+        "sensor": "Digital Still Camera & MSG Color Video Cameras",
+        "source_id": "src-bass-m-grc",
+        "unit": "samples",
+        "value": 44
+      }
+    ],
+    "mission_applicability": [
+      "ISS",
+      "Moon",
+      "Mars"
+    ],
+    "name": "Burning and Suppression of Solids - Milliken (BASS-M)",
+    "related_investigation_ids": [
+      "bass",
+      "bass-ii"
+    ],
+    "research_category": "Commercial / ISS National Lab Microgravity Textile Flammability Investigation",
+    "sample_dimensions": "44 samples: 11 textile types x 4 samples each",
+    "sample_geometry": "Textile sheets",
+    "scientific_objective": "Evaluate the microgravity burning behavior and self-extinguishment capability of ten flame-retardant-treated cotton textiles compared to an untreated control textile under varying forced airflow velocities, and compare microgravity flammability against terrestrial NASA upward-burn screening tests.",
+    "source_ids": [
+      "src-bass-m-grc"
+    ],
+    "transferability_note": "Tests realistic ignition scenarios where an untreated flammable item ignites and impinges on flame-retardant crew garments under spacecraft ventilation flows."
+  },
+  {
+    "acronym": "FLEX",
+    "combustion_type": "liquid droplet combustion / spherically symmetric droplet combustion, flame extinction, cool flames / two-stage combustion",
+    "conditions": {
+      "fuel_material": "Methanol; n-heptane; n-octane; n-decane; n-butanol; gasoline; Jet-A; biofuels (camelina / tallow); methyl butanoate; methyl decanoate; nonane; propanol; 1-propanol; Indolene; heptane / methanol mixtures; heptane / ethanol mixtures",
+      "gravity_condition": "microgravity",
+      "other_conditions": {
+        "test_pressure_range": "0.5 to 1.5 atm"
+      },
+      "oxygen_basis": "mole fraction",
+      "oxygen_concentration": 0.21,
+      "oxygen_unit": "mole fraction",
+      "sample_dimensions": "Droplet diameter about 3 mm",
+      "sample_geometry": "Spherical droplets"
+    },
+    "data_quality": {
+      "data_completeness": "partial",
+      "notes": "Converted from the verified PSI-69 page on 2026-11-13. FLEX identity values match the verified PSI-69 page values: DOI 10.60555/mbq8-0451, Version 5, 860.39 GB, 275 experimental-table rows, 51 publications. Temperature value, airflow value and sensor list are not published on the PSI page. Verification check 2026-11-13: confirmed. Every checkable value matches the PSI-69 page (DOI 10.60555/mbq8-0451, Version 5, 860.39 GB, 275 rows, 51 publications, all six Test 1 measurements, all four findings word-for-word).",
+      "verification_status": "confirmed"
+    },
+    "description": "Microgravity liquid-fuel droplet combustion and flame extinction investigation in the Combustion Integrated Rack (CIR) aboard the ISS.",
+    "findings": [
+      {
+        "experiment_id": "flex",
+        "fire_safety_relevance": [
+          "suppression"
+        ],
+        "id": "flex-f1",
+        "observation": "Enhances fire-safety protocols for future space missions where traditional suppression may be ineffective.",
+        "source_id": "src-flex-psi-69",
+        "title": "Better fire-safety protocols for future missions",
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "flex",
+        "fire_safety_relevance": [
+          "suppression"
+        ],
+        "id": "flex-f2",
+        "observation": "On Earth, fire safety in confined or reduced-gravity environments such as submarines or high-altitude aircraft.",
+        "source_id": "src-flex-psi-69",
+        "title": "Fire safety on Earth in confined or reduced gravity",
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "flex",
+        "fire_safety_relevance": [
+          "suppression"
+        ],
+        "id": "flex-f3",
+        "observation": "CO2, He and SF6 efficacy findings can lead to more efficient, less harmful suppression systems, reducing toxic byproducts.",
+        "source_id": "src-flex-psi-69",
+        "title": "More efficient, less harmful suppression systems",
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "flex",
+        "fire_safety_relevance": [
+          "suppression"
+        ],
+        "id": "flex-f4",
+        "observation": "Cool flames / low-temperature combustion can inform advanced combustion engines, improved fuel efficiency, reduced emissions.",
+        "source_id": "src-flex-psi-69",
+        "title": "Cool flames can inform cleaner engines",
+        "verification_status": "confirmed"
+      }
+    ],
+    "fire_safety_relevance": [
+      "suppression"
+    ],
+    "fuel_material": "Methanol; n-heptane; n-octane; n-decane; n-butanol; gasoline; Jet-A; biofuels (camelina / tallow); methyl butanoate; methyl decanoate; nonane; propanol; 1-propanol; Indolene; heptane / methanol mixtures; heptane / ethanol mixtures",
+    "hardware_ids": [
+      "cir",
+      "mdca"
+    ],
+    "id": "flex",
+    "limitations": [
+      "Flight hardware did not allow adequate diagnostics over the entire test for a droplet in uniform steady convective flow."
+    ],
+    "measurements": [
+      {
+        "experiment_id": "flex",
+        "id": "flex-m1",
+        "measurement_kind": "measured",
+        "parameter_description": "Initial droplet diameter, Test 1 (20CAL08), methanol",
+        "parameter_name": "initial_droplet_diameter",
+        "source_id": "src-flex-psi-69",
+        "unit": "mm",
+        "value": 1.69,
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "flex",
+        "id": "flex-m2",
+        "measurement_kind": "measured",
+        "parameter_description": "Visible flame extinction diameter, Test 1 (20CAL08), methanol",
+        "parameter_name": "visible_flame_extinction_diameter",
+        "source_id": "src-flex-psi-69",
+        "unit": "mm",
+        "value": 0.89,
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "flex",
+        "id": "flex-m3",
+        "measurement_kind": "measured",
+        "parameter_description": "Burn time, Test 1 (20CAL08), methanol",
+        "parameter_name": "burn_time",
+        "source_id": "src-flex-psi-69",
+        "unit": "s",
+        "value": 4.3,
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "flex",
+        "id": "flex-m4",
+        "measurement_kind": "measured",
+        "parameter_description": "Ambient pressure, Test 1 (20CAL08), methanol",
+        "parameter_name": "ambient_pressure",
+        "source_id": "src-flex-psi-69",
+        "unit": "mmHg",
+        "value": 757.7,
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "flex",
+        "id": "flex-m5",
+        "measurement_kind": "measured",
+        "parameter_description": "Initial ambient oxygen mole fraction, first table rows, methanol",
+        "parameter_name": "oxygen_mole_fraction",
+        "source_id": "src-flex-psi-69",
+        "unit": "mole fraction",
+        "value": 0.21,
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "flex",
+        "id": "flex-m6",
+        "measurement_kind": "interpreted",
+        "parameter_description": "Test pressure range in the Limiting Oxygen Index procedure",
+        "parameter_name": "test_pressure_range",
+        "source_id": "src-flex-psi-69",
+        "unit": "atm",
+        "value": "0.5 to 1.5",
+        "verification_status": "confirmed"
+      }
+    ],
+    "mission_applicability": [
+      "ISS"
+    ],
+    "name": "Flame Extinguishment Experiment (FLEX)",
+    "nasa_investigation_id": "PSI-69",
+    "related_investigation_ids": [],
+    "research_category": "Liquid Droplet Combustion and Flame Extinction",
+    "sample_dimensions": "Droplet diameter about 3 mm",
+    "sample_geometry": "Spherical droplets",
+    "scientific_objective": "The FLEX (Flame Extinguishment Experiment) investigation aims to map the flammability limits of liquid fuels in microgravity environments, measure the effectiveness of various gaseous fire suppressants such as CO2, He, and SF6, and develop reliable predictive models for combustion limits under reduced gravity conditions. The mission seeks to validate and improve simplified models by incorporating detailed chemical reactions, heat transfer, and material movement, using both space-based data and extensive ground-based tests. Key flight experiment goals include obtaining high-resolution measurements of droplet burning rates, flame extinction behavior, heat radiation, soot levels, and temperature profiles, while systematically analyzing the effects of different ambient conditions and suppressant concentrations. These investigations are essential for advancing the fundamental understanding of combustion processes in microgravity and enhancing fire safety protocols for future space missions.",
+    "source_ids": [
+      "src-flex-psi-69"
+    ],
+    "transferability_note": "Cool flames and low-temperature combustion can inform advanced combustion engines, improved fuel efficiency and reduced emissions; CO2, He and SF6 suppressant findings can lead to more efficient, less harmful suppression systems."
+  },
+  {
+    "acronym": "SAFFIRE-II",
+    "combustion_type": "large-scale solid surface flame spread, concurrent and opposed flow",
+    "conditions": {
+      "airflow_direction": "concurrent and opposed",
+      "airflow_unit": "cm/s",
+      "fuel_material": "SIBAL; silicone; structure PMMA; flat PMMA; PMMA with Nomex",
+      "gravity_condition": "microgravity",
+      "other_conditions": {
+        "airflow_velocity": "20 or 30 cm/s depending on sample material"
+      },
+      "sample_dimensions": "9 samples, each 5 cm x 29 cm",
+      "sample_geometry": "Flat samples on a sample card"
+    },
+    "data_quality": {
+      "data_completeness": "partial",
+      "notes": "Converted from the verified PSI-99 page on 2026-11-13. Oxygen, pressure and temperature values, numerical results, an experimental table, images and suppression methods are not published on the PSI page. Verification check 2026-11-13: partially documented. Identity, objective, fuels, sample dimensions and all five findings (word-for-word) match the PSI-99 page. Oxygen, pressure and temperature values are not published on the PSI page. Note: measurement m1 records airflow as '20 to 30' cm/s, but the PSI page says '20 or 30' cm/s depending on sample material.",
+      "verification_status": "partially_documented"
+    },
+    "description": "Large-scale solid surface flame-spread investigation in the SAFFIRE module aboard the Cygnus resupply vehicle after it deberthed from the ISS.",
+    "findings": [
+      {
+        "experiment_id": "saffire-ii",
+        "fire_safety_relevance": [],
+        "id": "saffire-ii-f1",
+        "observation": "The Saffire-II experiment provides a new way to study a realistic fire on an exploration vehicle, which has not been possible in the past because the risks are too high.",
+        "source_id": "src-saffire-ii-psi-99",
+        "title": "A new way to study a realistic fire",
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "saffire-ii",
+        "fire_safety_relevance": [],
+        "id": "saffire-ii-f2",
+        "observation": "Instruments on an unmanned cargo vessel measure oxygen, carbon dioxide, heat, pressure and flame growth, and two video cameras provide views of the flame.",
+        "source_id": "src-saffire-ii-psi-99",
+        "title": "Instruments measure oxygen, heat, pressure and flame growth",
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "saffire-ii",
+        "fire_safety_relevance": [],
+        "id": "saffire-ii-f3",
+        "observation": "Results determine microgravity flammability limits for several spacecraft materials, help to validate NASA material selection criteria, and show how microgravity and limited oxygen affect flame size.",
+        "source_id": "src-saffire-ii-psi-99",
+        "title": "Microgravity flammability limits for spacecraft materials",
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "saffire-ii",
+        "fire_safety_relevance": [],
+        "id": "saffire-ii-f4",
+        "observation": "The investigation is crucial for the safety of current and future space missions.",
+        "source_id": "src-saffire-ii-psi-99",
+        "title": "Crucial for current and future mission safety",
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "saffire-ii",
+        "fire_safety_relevance": [],
+        "id": "saffire-ii-f5",
+        "observation": "Studying fire in small, sealed environments such as the Cygnus cargo supply vehicle benefits fire safety and prevention efforts on Earth, including inside mines, airplanes, or submarines.",
+        "source_id": "src-saffire-ii-psi-99",
+        "title": "Benefits fire safety on Earth",
+        "verification_status": "confirmed"
+      }
+    ],
+    "fire_safety_relevance": [],
+    "fuel_material": "SIBAL; silicone; structure PMMA; flat PMMA; PMMA with Nomex",
+    "hardware_ids": [
+      "saffire"
+    ],
+    "id": "saffire-ii",
+    "limitations": [
+      "Oxygen, pressure and temperature values are not published on the PSI page."
+    ],
+    "measurements": [
+      {
+        "experiment_id": "saffire-ii",
+        "id": "saffire-ii-m1",
+        "measurement_kind": "interpreted",
+        "parameter_description": "Airflow velocity, 20 or 30 cm/s depending on sample material",
+        "parameter_name": "airflow_velocity",
+        "source_id": "src-saffire-ii-psi-99",
+        "unit": "cm/s",
+        "value": "20 to 30"
+      },
+      {
+        "experiment_id": "saffire-ii",
+        "id": "saffire-ii-m2",
+        "measurement_kind": "measured",
+        "parameter_description": "Samples on the sample card",
+        "parameter_name": "sample_count",
+        "source_id": "src-saffire-ii-psi-99",
+        "unit": "samples",
+        "value": 9
+      },
+      {
+        "experiment_id": "saffire-ii",
+        "id": "saffire-ii-m3",
+        "measurement_kind": "measured",
+        "parameter_description": "Sample length",
+        "parameter_name": "sample_length",
+        "source_id": "src-saffire-ii-psi-99",
+        "unit": "cm",
+        "value": 29
+      },
+      {
+        "experiment_id": "saffire-ii",
+        "id": "saffire-ii-m4",
+        "measurement_kind": "measured",
+        "parameter_description": "Sample width",
+        "parameter_name": "sample_width",
+        "source_id": "src-saffire-ii-psi-99",
+        "unit": "cm",
+        "value": 5
+      }
+    ],
+    "mission_applicability": [
+      "ISS"
+    ],
+    "name": "Spacecraft Fire Experiment-II (SAFFIRE-II)",
+    "nasa_investigation_id": "PSI-99",
+    "related_investigation_ids": [
+      "saffire-iii"
+    ],
+    "research_category": "Large-Scale Solid Surface Flame Spread",
+    "sample_dimensions": "9 samples, each 5 cm x 29 cm",
+    "sample_geometry": "Flat samples on a sample card",
+    "scientific_objective": "The objectives of SAFFIRE-II are to determine how rapidly a large scale fire grows in low-gravity and to investigate the low-g flammability limits compared to those obtained in NASA's normal gravity material flammability screening test.",
+    "source_ids": [
+      "src-saffire-ii-psi-99"
+    ],
+    "transferability_note": "Studying fire in small, sealed environments such as the Cygnus cargo supply vehicle benefits fire safety and prevention efforts on Earth, including inside mines, airplanes, or submarines."
+  },
+  {
+    "acronym": "SAFFIRE-III",
+    "combustion_type": "large-scale solid surface flame spread, concurrent and opposed flow",
+    "conditions": {
+      "airflow_direction": "concurrent and opposed",
+      "airflow_unit": "cm/s",
+      "airflow_velocity": 30,
+      "fuel_material": "SIBAL Fabric",
+      "gravity_condition": "microgravity",
+      "other_conditions": {
+        "flow_velocity_comparison": "30 cm/s, compared to 20 cm/s during Saffire I"
+      },
+      "sample_dimensions": "0.33 cm thick, 94 cm long, 40.6 cm wide",
+      "sample_geometry": "Flat fabric sample"
+    },
+    "data_quality": {
+      "data_completeness": "partial",
+      "notes": "Converted from the verified PSI-100 page on 2026-11-13. Investigation end date, oxygen, pressure and temperature values and numerical results beyond the table are not published on the PSI page. The Research Impacts text on the PSI-100 page names the Saffire-I experiment; the wording is copied as shown. Verification check 2026-11-13: partially documented. Identity, objective, fuel, sample dimensions, all four measurements and all five findings (word-for-word) match the PSI-100 page. Oxygen, pressure and temperature values and the investigation end date are not published on the PSI page. The Research Impacts text names Saffire-I, copied as shown on the PSI-100 page.",
+      "verification_status": "partially_documented"
+    },
+    "description": "Large-scale solid surface flame-spread investigation in the SAFFIRE module aboard the Cygnus resupply vehicle after it deberthed from the ISS, using SIBAL fabric at 30 cm/s airflow.",
+    "findings": [
+      {
+        "experiment_id": "saffire-iii",
+        "fire_safety_relevance": [],
+        "id": "saffire-iii-f1",
+        "observation": "The Saffire-I experiment provides a new way to study a realistic fire on an exploration vehicle, which has not been possible in the past because the risks are too high. (Wording as shown on the PSI-100 page, naming Saffire-I in the SAFFIRE-III impacts.)",
+        "source_id": "src-saffire-iii-psi-100",
+        "title": "A new way to study a realistic fire",
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "saffire-iii",
+        "fire_safety_relevance": [],
+        "id": "saffire-iii-f2",
+        "observation": "Instruments on an unmanned cargo vessel measure oxygen, carbon dioxide, heat, pressure and flame growth, and two video cameras provide views of the flame.",
+        "source_id": "src-saffire-iii-psi-100",
+        "title": "Instruments measure oxygen, heat, pressure and flame growth",
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "saffire-iii",
+        "fire_safety_relevance": [],
+        "id": "saffire-iii-f3",
+        "observation": "Results determine microgravity flammability limits, validate material selection criteria, and show how microgravity and limited oxygen affect flame size.",
+        "source_id": "src-saffire-iii-psi-100",
+        "title": "Microgravity flammability limits for spacecraft materials",
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "saffire-iii",
+        "fire_safety_relevance": [],
+        "id": "saffire-iii-f4",
+        "observation": "The investigation is crucial for the safety of current and future space missions.",
+        "source_id": "src-saffire-iii-psi-100",
+        "title": "Crucial for current and future mission safety",
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "saffire-iii",
+        "fire_safety_relevance": [],
+        "id": "saffire-iii-f5",
+        "observation": "Studying fire in small, sealed environments such as the Cygnus cargo supply vehicle benefits fire safety and prevention efforts on Earth, including inside mines, airplanes, or submarines.",
+        "source_id": "src-saffire-iii-psi-100",
+        "title": "Benefits fire safety on Earth",
+        "verification_status": "confirmed"
+      }
+    ],
+    "fire_safety_relevance": [],
+    "fuel_material": "SIBAL Fabric",
+    "hardware_ids": [
+      "saffire"
+    ],
+    "id": "saffire-iii",
+    "limitations": [
+      "Oxygen, pressure and temperature values are not published on the PSI page."
+    ],
+    "measurements": [
+      {
+        "experiment_id": "saffire-iii",
+        "id": "saffire-iii-m1",
+        "measurement_kind": "measured",
+        "parameter_description": "Airflow velocity, compared to 20 cm/s during Saffire I",
+        "parameter_name": "airflow_velocity",
+        "source_id": "src-saffire-iii-psi-100",
+        "unit": "cm/s",
+        "value": 30
+      },
+      {
+        "experiment_id": "saffire-iii",
+        "id": "saffire-iii-m2",
+        "measurement_kind": "measured",
+        "parameter_description": "SIBAL fabric sample thickness",
+        "parameter_name": "sample_thickness",
+        "source_id": "src-saffire-iii-psi-100",
+        "unit": "cm",
+        "value": 0.33
+      },
+      {
+        "experiment_id": "saffire-iii",
+        "id": "saffire-iii-m3",
+        "measurement_kind": "measured",
+        "parameter_description": "SIBAL fabric sample length",
+        "parameter_name": "sample_length",
+        "source_id": "src-saffire-iii-psi-100",
+        "unit": "cm",
+        "value": 94
+      },
+      {
+        "experiment_id": "saffire-iii",
+        "id": "saffire-iii-m4",
+        "measurement_kind": "measured",
+        "parameter_description": "SIBAL fabric sample width",
+        "parameter_name": "sample_width",
+        "source_id": "src-saffire-iii-psi-100",
+        "unit": "cm",
+        "value": 40.6
+      }
+    ],
+    "mission_applicability": [
+      "ISS"
+    ],
+    "name": "Spacecraft Fire Experiment-III (SAFFIRE-III)",
+    "nasa_investigation_id": "PSI-100",
+    "related_investigation_ids": [
+      "saffire-ii"
+    ],
+    "research_category": "Large-Scale Solid Surface Flame Spread",
+    "sample_dimensions": "0.33 cm thick, 94 cm long, 40.6 cm wide",
+    "sample_geometry": "Flat fabric sample",
+    "scientific_objective": "The objectives of this investigation were to: (1) determine how rapidly a large scale fire grows in low-gravity and (2) investigate the low-g flammability limits compared to those obtained in NASA's normal gravity material flammability screening test.",
+    "source_ids": [
+      "src-saffire-iii-psi-100"
+    ],
+    "transferability_note": "Studying fire in small, sealed environments such as the Cygnus cargo supply vehicle benefits fire safety and prevention efforts on Earth, including inside mines, airplanes, or submarines."
+  },
+  {
+    "acronym": "SAME",
+    "combustion_type": "pyrolysis / smoldering smoke generation from overheated spacecraft materials (not open flame spread)",
+    "conditions": {
+      "airflow_unit": "cm/s",
+      "fuel_material": "Teflon; Kapton; overheated spacecraft materials generally",
+      "gravity_condition": "microgravity",
+      "other_conditions": {
+        "airflow_velocity": "5 cm/s for samples 1-3, 10 cm/s for sample 4",
+        "combustion_event_duration": "typically 2 minutes",
+        "igniter_duration": "15 to 60 seconds"
+      },
+      "sample_dimensions": "Not published on the PSI page",
+      "sample_geometry": "Overheated material samples"
+    },
+    "data_quality": {
+      "data_completeness": "partial",
+      "notes": "Converted from the verified PSI-102 page on 2026-11-13. Oxygen and pressure values, summary particle-size results and flame-spread data are not published on the PSI page. Moon is mentioned only in a publication title, not as mission relevance in the Description. Verification check 2026-11-13: partially documented. Identity, objective, fuels, airflow, all five measurements and all five findings (word-for-word) match the PSI-102 page. Oxygen and pressure values and summary particle-size results are not published on the PSI page. Note: measurement m1 records airflow as '5 to 10' cm/s, but the PSI page publishes only the discrete values 5 cm/s and 10 cm/s.",
+      "verification_status": "partially_documented"
+    },
+    "description": "Smoke and aerosol measurement investigation in the Glovebox aboard the ISS, studying smoke particle sizes from overheated spacecraft materials and smoke-detector response.",
+    "findings": [
+      {
+        "experiment_id": "same",
+        "fire_safety_relevance": [
+          "prevention",
+          "detection"
+        ],
+        "id": "same-f1",
+        "observation": "The SAME experiment will provide technology for an advanced fire detector for future spacecraft that will be used for long duration missions.",
+        "source_id": "src-same-psi-102",
+        "title": "Technology for an advanced fire detector",
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "same",
+        "fire_safety_relevance": [
+          "prevention",
+          "detection"
+        ],
+        "id": "same-f2",
+        "observation": "SAME will provide quantitative data on the sensitivity of these detectors to reduced gravity smokes, allowing evaluation of the adequacy of existing technologies using relevant data.",
+        "source_id": "src-same-psi-102",
+        "title": "Quantitative data on detector sensitivity",
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "same",
+        "fire_safety_relevance": [
+          "prevention",
+          "detection"
+        ],
+        "id": "same-f3",
+        "observation": "The current Fire Prevention, Detection, and Suppression (FPDS) program plan allows for the re-evaluation of future sensor technology, to allow new technology and capability to be utilized.",
+        "source_id": "src-same-psi-102",
+        "title": "Re-evaluation of future sensor technology",
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "same",
+        "fire_safety_relevance": [
+          "prevention",
+          "detection"
+        ],
+        "id": "same-f4",
+        "observation": "The results from SAME are needed to provide the reduced gravity baseline data against which future detection technology developments can be evaluated.",
+        "source_id": "src-same-psi-102",
+        "title": "Reduced gravity baseline for detection technology",
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "same",
+        "fire_safety_relevance": [
+          "prevention",
+          "detection"
+        ],
+        "id": "same-f5",
+        "observation": "The smoke detectors developed from the results of SAME can also be useful in other extreme environments on Earth, such as submarines or underwater laboratories. Accurate detection of smoke in these environments can save lives.",
+        "source_id": "src-same-psi-102",
+        "title": "Smoke detectors useful in extreme environments on Earth",
+        "verification_status": "confirmed"
+      }
+    ],
+    "fire_safety_relevance": [
+      "prevention",
+      "detection"
+    ],
+    "fuel_material": "Teflon; Kapton; overheated spacecraft materials generally",
+    "hardware_ids": [
+      "same-hardware"
+    ],
+    "id": "same",
+    "limitations": [
+      "By design, this is a smoke experiment; it produces no flame-spread data."
+    ],
+    "measurements": [
+      {
+        "experiment_id": "same",
+        "id": "same-m1",
+        "measurement_kind": "interpreted",
+        "parameter_description": "Airflow velocity, 5 cm/s for samples 1-3, 10 cm/s for sample 4",
+        "parameter_name": "airflow_velocity",
+        "source_id": "src-same-psi-102",
+        "unit": "cm/s",
+        "value": "5 to 10"
+      },
+      {
+        "experiment_id": "same",
+        "id": "same-m2",
+        "measurement_kind": "measured",
+        "parameter_description": "Weight loss rate, Teflon sample 1",
+        "parameter_name": "weight_loss_rate",
+        "source_id": "src-same-psi-102",
+        "unit": "mg/min",
+        "value": 2
+      },
+      {
+        "experiment_id": "same",
+        "id": "same-m3",
+        "measurement_kind": "measured",
+        "parameter_description": "Aging duration, Teflon sample 1",
+        "parameter_name": "aging_duration",
+        "source_id": "src-same-psi-102",
+        "unit": "min",
+        "value": 1
+      },
+      {
+        "experiment_id": "same",
+        "id": "same-m4",
+        "measurement_kind": "measured",
+        "parameter_description": "Each combustion event typically lasted 2 minutes",
+        "parameter_name": "combustion_event_duration",
+        "source_id": "src-same-psi-102",
+        "unit": "min",
+        "value": 2
+      },
+      {
+        "experiment_id": "same",
+        "id": "same-m5",
+        "measurement_kind": "interpreted",
+        "parameter_description": "Igniter on for 15 to 60 seconds per combustion event",
+        "parameter_name": "igniter_duration",
+        "source_id": "src-same-psi-102",
+        "unit": "s",
+        "value": "15 to 60"
+      }
+    ],
+    "mission_applicability": [
+      "ISS"
+    ],
+    "name": "Smoke and Aerosol Measurement Experiment (SAME)",
+    "nasa_investigation_id": "PSI-102",
+    "related_investigation_ids": [
+      "same-r"
+    ],
+    "research_category": "Smoke and Aerosol Measurement",
+    "sample_dimensions": "Not published on the PSI page",
+    "sample_geometry": "Overheated material samples",
+    "scientific_objective": "One of the major goals of this investigation was to quantify the sizes that the liquid smoke particulate achieves in low gravity and to relate the droplet size distribution to the smoke generation and smoke transport conditions in the experiment. A numerical code was to be developed to predict the smoke droplet growth as a function of the fuel pyrolysis rate, the thermodynamic properties of the pyrolysis vapor, and the flow environment.",
+    "source_ids": [
+      "src-same-psi-102"
+    ],
+    "transferability_note": "Smoke detectors developed from SAME results can also be useful in extreme environments on Earth, such as submarines or underwater laboratories."
+  },
+  {
+    "acronym": "SAME-R",
+    "combustion_type": "pyrolysis / smoldering smoke generation",
+    "conditions": {
+      "airflow_unit": "cm/s",
+      "airflow_velocity": 8.1,
+      "fuel_material": "Kapton; Pyrell intumescent fire-retardant foam by Foamex",
+      "gravity_condition": "microgravity",
+      "other_conditions": {
+        "flow_note": "No-flow during sample heating time"
+      },
+      "sample_dimensions": "Not published on the PSI page",
+      "sample_geometry": "Overheated material samples"
+    },
+    "data_quality": {
+      "data_completeness": "partial",
+      "notes": "Converted from the verified PSI-101 page on 2026-11-13. Oxygen, pressure and temperature values and summary particle-size results are not published on the PSI page. Verification check 2026-11-13: partially documented. Identity, objective, fuels, inlet velocity 8.1 cm/s and all five measurements match the PSI-101 page. Oxygen, pressure and temperature values are not published on the PSI page. Note: the findings name the SAME experiment, not SAME-R, because the PSI-101 page uses the same wording as SAME; the wording is copied as shown.",
+      "verification_status": "partially_documented"
+    },
+    "description": "Reflight of the Smoke and Aerosol Measurement Experiment in the Glovebox aboard the ISS, with a new test material (Pyrell) and the M-pass instrument.",
+    "findings": [
+      {
+        "experiment_id": "same-r",
+        "fire_safety_relevance": [
+          "prevention",
+          "detection"
+        ],
+        "id": "same-r-f1",
+        "observation": "The SAME experiment will provide technology for an advanced fire detector for future spacecraft that will be used for long duration missions.",
+        "source_id": "src-same-r-psi-101",
+        "title": "Technology for an advanced fire detector"
+      },
+      {
+        "experiment_id": "same-r",
+        "fire_safety_relevance": [
+          "prevention",
+          "detection"
+        ],
+        "id": "same-r-f2",
+        "observation": "SAME will provide quantitative data on the sensitivity of these detectors to reduced gravity smokes, allowing evaluation of the adequacy of existing technologies using relevant data.",
+        "source_id": "src-same-r-psi-101",
+        "title": "Quantitative data on detector sensitivity"
+      },
+      {
+        "experiment_id": "same-r",
+        "fire_safety_relevance": [
+          "prevention",
+          "detection"
+        ],
+        "id": "same-r-f3",
+        "observation": "The current Fire Prevention, Detection, and Suppression (FPDS) program plan allows for the re-evaluation of future sensor technology, to allow new technology and capability to be utilized.",
+        "source_id": "src-same-r-psi-101",
+        "title": "Re-evaluation of future sensor technology"
+      },
+      {
+        "experiment_id": "same-r",
+        "fire_safety_relevance": [
+          "prevention",
+          "detection"
+        ],
+        "id": "same-r-f4",
+        "observation": "The results from SAME are needed to provide the reduced gravity baseline data against which future detection technology developments can be evaluated.",
+        "source_id": "src-same-r-psi-101",
+        "title": "Reduced gravity baseline for detection technology"
+      },
+      {
+        "experiment_id": "same-r",
+        "fire_safety_relevance": [
+          "prevention",
+          "detection"
+        ],
+        "id": "same-r-f5",
+        "observation": "The smoke detectors developed from the results of SAME can also be useful in other extreme environments on Earth, such as submarines or underwater laboratories. Accurate detection of smoke in these environments can save lives.",
+        "source_id": "src-same-r-psi-101",
+        "title": "Smoke detectors useful in extreme environments on Earth"
+      }
+    ],
+    "fire_safety_relevance": [
+      "prevention",
+      "detection"
+    ],
+    "fuel_material": "Kapton; Pyrell intumescent fire-retardant foam by Foamex",
+    "hardware_ids": [
+      "same-hardware"
+    ],
+    "id": "same-r",
+    "limitations": [
+      "All TEM grids from SAME were severely contaminated with unidentified foreign particles, making them unusable; SAME-R modified the diagnostics."
+    ],
+    "measurements": [
+      {
+        "experiment_id": "same-r",
+        "id": "same-r-m1",
+        "measurement_kind": "measured",
+        "parameter_description": "Inlet velocity in the first table rows",
+        "parameter_name": "inlet_velocity",
+        "source_id": "src-same-r-psi-101",
+        "unit": "cm/s",
+        "value": 8.1
+      },
+      {
+        "experiment_id": "same-r",
+        "id": "same-r-m2",
+        "measurement_kind": "measured",
+        "parameter_description": "Test duration, first table rows",
+        "parameter_name": "test_duration",
+        "source_id": "src-same-r-psi-101",
+        "unit": "s",
+        "value": 60
+      },
+      {
+        "experiment_id": "same-r",
+        "id": "same-r-m3",
+        "measurement_kind": "measured",
+        "parameter_description": "Flight test points completed July 16 to September 9, 2010",
+        "parameter_name": "flight_test_points",
+        "source_id": "src-same-r-psi-101",
+        "unit": "tests",
+        "value": 66
+      },
+      {
+        "experiment_id": "same-r",
+        "id": "same-r-m4",
+        "measurement_kind": "measured",
+        "parameter_description": "Rt/R0, Kapton test 51",
+        "parameter_name": "rt_r0",
+        "source_id": "src-same-r-psi-101",
+        "unit": "ratio",
+        "value": 1.38
+      },
+      {
+        "experiment_id": "same-r",
+        "id": "same-r-m5",
+        "measurement_kind": "measured",
+        "parameter_description": "Net aging time, Kapton test 51",
+        "parameter_name": "net_aging_time",
+        "source_id": "src-same-r-psi-101",
+        "unit": "s",
+        "value": 38
+      }
+    ],
+    "mission_applicability": [
+      "ISS"
+    ],
+    "name": "Smoke Aerosol Measurement Experiment-Reflight (SAME-R)",
+    "nasa_investigation_id": "PSI-101",
+    "related_investigation_ids": [
+      "same"
+    ],
+    "research_category": "Smoke and Aerosol Measurement",
+    "sample_dimensions": "Not published on the PSI page",
+    "sample_geometry": "Overheated material samples",
+    "scientific_objective": "Similar to the original SAME investigation, the primary objective of the SAME-R investigation was to quantify the sizes that the liquid smoke particulate achieves in low gravity and to relate the droplet size distribution to the smoke generation and smoke transport conditions in the experiment. One of the problems encountered during the SAME investigation was that after the thermal precipitators were returned to the ground, it was found that all the TEM grids were severely contaminated with some unidentified foreign particles, making these grids unusable although some of them showed shapes of certain types of smoke particles. Based on that experience the SAME-R investigation employed several modification covering new materials, extended operating conditions, and diagnostic equipments.",
+    "source_ids": [
+      "src-same-r-psi-101"
+    ],
+    "transferability_note": "Smoke detectors developed from SAME results can also be useful in extreme environments on Earth, such as submarines or underwater laboratories."
+  },
+  {
+    "acronym": "SPICE",
+    "combustion_type": "non-buoyant laminar jet diffusion flames, co-flow; smoke point / soot emission",
+    "conditions": {
+      "airflow_unit": "cm/s",
+      "fuel_material": "methane; ethylene; propane; propylene; propylene mixtures",
+      "gravity_condition": "microgravity",
+      "other_conditions": {
+        "burner_diameters": "0.41 mm, 0.76 mm, 1.6 mm",
+        "coflow_velocity_range": "5.4 to 65 cm/s"
+      },
+      "sample_dimensions": "Burner diameters 0.41 mm, 0.76 mm, 1.6 mm",
+      "sample_geometry": "Jet diffusion flames from co-flow burners"
+    },
+    "data_quality": {
+      "data_completeness": "partial",
+      "notes": "Converted from the verified PSI-107 page on 2026-11-13. Investigation start and end dates, oxygen, pressure and temperature values and summary smoke-point results are not published on the PSI page. Verification check 2026-11-13: partially documented. Identity, objective, fuels, co-flow velocity, burner diameters, all five measurements and all four findings (word-for-word) match the PSI-107 page. DOI, version, size, row count and publications are published by PSI but have no field in this record. Oxygen, pressure and temperature values are not published on the PSI page.",
+      "verification_status": "partially_documented"
+    },
+    "description": "Smoke point investigation of non-buoyant laminar jet diffusion flames in the Microgravity Science Glovebox aboard the ISS.",
+    "findings": [
+      {
+        "experiment_id": "spice",
+        "fire_safety_relevance": [],
+        "id": "spice-f1",
+        "observation": "Will improve understanding of soot formation mechanisms and help design safer spacecraft environments.",
+        "source_id": "src-spice-psi-107",
+        "title": "Better understanding of soot formation",
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "spice",
+        "fire_safety_relevance": [],
+        "id": "spice-f2",
+        "observation": "Will contribute to refining computational models for predicting flame behaviors under non-buoyant conditions.",
+        "source_id": "src-spice-psi-107",
+        "title": "Refined models for non-buoyant flames",
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "spice",
+        "fire_safety_relevance": [],
+        "id": "spice-f3",
+        "observation": "Will enhance knowledge of soot generation.",
+        "source_id": "src-spice-psi-107",
+        "title": "More knowledge of soot generation",
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "spice",
+        "fire_safety_relevance": [],
+        "id": "spice-f4",
+        "observation": "Could possibly provide insights to better fuel formulations and combustion processes.",
+        "source_id": "src-spice-psi-107",
+        "title": "Insights for better fuels and combustion",
+        "verification_status": "confirmed"
+      }
+    ],
+    "fire_safety_relevance": [],
+    "fuel_material": "methane; ethylene; propane; propylene; propylene mixtures",
+    "hardware_ids": [
+      "msg"
+    ],
+    "id": "spice",
+    "limitations": [
+      "Oxygen, pressure and temperature values are not published on the PSI page."
+    ],
+    "measurements": [
+      {
+        "experiment_id": "spice",
+        "id": "spice-m1",
+        "measurement_kind": "interpreted",
+        "parameter_description": "Co-flow velocities",
+        "parameter_name": "coflow_velocity",
+        "source_id": "src-spice-psi-107",
+        "unit": "cm/s",
+        "value": "5.4 to 65"
+      },
+      {
+        "experiment_id": "spice",
+        "id": "spice-m2",
+        "measurement_kind": "measured",
+        "parameter_description": "Total flames studied",
+        "parameter_name": "flames_studied",
+        "source_id": "src-spice-psi-107",
+        "unit": "flames",
+        "value": 526
+      },
+      {
+        "experiment_id": "spice",
+        "id": "spice-m3",
+        "measurement_kind": "measured",
+        "parameter_description": "Fuel rate, ethylene, GMT date 45, first row",
+        "parameter_name": "fuel_rate",
+        "source_id": "src-spice-psi-107",
+        "unit": "sccm",
+        "value": 103.8
+      },
+      {
+        "experiment_id": "spice",
+        "id": "spice-m4",
+        "measurement_kind": "measured",
+        "parameter_description": "Air rate, ethylene, GMT date 45, first row",
+        "parameter_name": "air_rate",
+        "source_id": "src-spice-psi-107",
+        "unit": "cm/s",
+        "value": 36.39
+      },
+      {
+        "experiment_id": "spice",
+        "id": "spice-m5",
+        "measurement_kind": "measured",
+        "parameter_description": "Nozzle diameter, ethylene, GMT date 45, first row",
+        "parameter_name": "nozzle_diameter",
+        "source_id": "src-spice-psi-107",
+        "unit": "mm",
+        "value": 1.6002
+      }
+    ],
+    "mission_applicability": [
+      "ISS"
+    ],
+    "name": "Smoke Point In Co-flow Experiment (SPICE)",
+    "nasa_investigation_id": "PSI-107",
+    "related_investigation_ids": [],
+    "research_category": "Gaseous Jet Diffusion Flames and Smoke Point",
+    "sample_dimensions": "Burner diameters 0.41 mm, 0.76 mm, 1.6 mm",
+    "sample_geometry": "Jet diffusion flames from co-flow burners",
+    "scientific_objective": "The objective of SPICE is to better understand the complex process of combustion by observing flames in a microgravity environment aboard the International Space Station (ISS) and analogous ground experiments. Specific objectives: (1) Identify laminar smoke-point properties of non-buoyant jet diffusion flames under various co-flow conditions in microgravity. (2) Determine effects of burner diameter and co-flow velocity on luminous flame lengths and smoke points. (3) Quantify sooting propensity of different fuels, such as ethylene, propane, and propylene mixtures. (4) Validate correlation between luminous flame shape and residence time under microgravity. (5) Investigate impact of air and fuel flow rate variations on smoke point phenomena in space.",
+    "source_ids": [
+      "src-spice-psi-107"
+    ],
+    "transferability_note": "Could possibly provide insights to better fuel formulations and combustion processes."
+  },
+  {
+    "acronym": "ACME CFI-G",
+    "combustion_type": "spherical cool diffusion flames (gaseous fuels), normal and inverse flames, hot / cool flame transition and oscillation",
+    "conditions": {
+      "fuel_material": "propane; n-butane; n-pentane; ethane",
+      "gravity_condition": "microgravity",
+      "other_conditions": {
+        "adiabatic_flame_temperature_K": "up to 2120 in first rows",
+        "oxygen_flow_rate_mg_s": "5.59 (tests A1/A2)",
+        "oxygen_mole_fraction": "0.12 to 0.21 in first table rows",
+        "pressure_bar": "approx 1.10 in first rows"
+      },
+      "sample_dimensions": "Spherical porous burners; burner diameter not published on the PSI page",
+      "sample_geometry": "Spherical porous burners"
+    },
+    "data_quality": {
+      "data_completeness": "partial",
+      "notes": "Converted from the verified PSI-159 page on 2026-11-13. Investigation start and end dates, a cm/s airflow value and summary results are not published on the PSI page. The live text view renders an experimental table with 1016 rows. Verification check 2026-11-13: partially documented. Identity, objective, fuels, all five measurements and all five findings (word-for-word) match the PSI-159 page. DOI, version, size, row count and publications are published by PSI but have no field in this record. A cm/s airflow value and the investigation start and end dates are not published on the PSI page.",
+      "verification_status": "partially_documented"
+    },
+    "description": "Spherical cool diffusion flame investigation with gaseous fuels in the Combustion Integrated Rack aboard the ISS.",
+    "findings": [
+      {
+        "experiment_id": "acme-cfi-g",
+        "fire_safety_relevance": [],
+        "id": "acme-cfi-g-f1",
+        "observation": "Combustion provides 86% of the world energy and an even higher fraction of the energy used for transportation.",
+        "source_id": "src-acme-psi-159",
+        "title": "Combustion provides 86% of world energy",
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "acme-cfi-g",
+        "fire_safety_relevance": [],
+        "id": "acme-cfi-g-f2",
+        "observation": "The internal combustion engines used for transportation generally have thermal efficiencies of 38% or lower because of thermal losses. These efficiencies may increase to 60% if future engines can take advantage of ultra-lean combustion.",
+        "source_id": "src-acme-psi-159",
+        "title": "Engines are 38% efficient or lower",
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "acme-cfi-g",
+        "fire_safety_relevance": [],
+        "id": "acme-cfi-g-f3",
+        "observation": "This progress is being impeded by the limited understanding of the chemistry of cool flames.",
+        "source_id": "src-acme-psi-159",
+        "title": "Cool flame chemistry limits progress",
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "acme-cfi-g",
+        "fire_safety_relevance": [],
+        "id": "acme-cfi-g-f4",
+        "observation": "Research into cool diffusion flames (whose peak temperatures are 500-1000 K) has grown exponentially since they were discovered in 2012.",
+        "source_id": "src-acme-psi-159",
+        "title": "Cool flame research has grown since 2012",
+        "verification_status": "confirmed"
+      },
+      {
+        "experiment_id": "acme-cfi-g",
+        "fire_safety_relevance": [],
+        "id": "acme-cfi-g-f5",
+        "observation": "The measurements performed for this project will help to test and advance cool flame kinetics mechanisms. This should facilitate the development of more efficient internal combustion engines.",
+        "source_id": "src-acme-psi-159",
+        "title": "Measurements will test cool flame mechanisms",
+        "verification_status": "confirmed"
+      }
+    ],
+    "fire_safety_relevance": [],
+    "fuel_material": "propane; n-butane; n-pentane; ethane",
+    "hardware_ids": [
+      "cir"
+    ],
+    "id": "acme-cfi-g",
+    "limitations": [
+      "A cool-flame kinetics investigation, not a fire-safety test."
+    ],
+    "measurements": [
+      {
+        "experiment_id": "acme-cfi-g",
+        "id": "acme-cfi-g-m1",
+        "measurement_kind": "measured",
+        "parameter_description": "Oxygen mole fraction, test A1, ethane",
+        "parameter_name": "oxygen_mole_fraction",
+        "source_id": "src-acme-psi-159",
+        "unit": "mole fraction",
+        "value": 0.21
+      },
+      {
+        "experiment_id": "acme-cfi-g",
+        "id": "acme-cfi-g-m2",
+        "measurement_kind": "measured",
+        "parameter_description": "Burn time, test A2, ethane, hot ignition",
+        "parameter_name": "burn_time",
+        "source_id": "src-acme-psi-159",
+        "unit": "s",
+        "value": 35
+      },
+      {
+        "experiment_id": "acme-cfi-g",
+        "id": "acme-cfi-g-m3",
+        "measurement_kind": "measured",
+        "parameter_description": "Adiabatic flame temperature Tad, tests A1/A2",
+        "parameter_name": "adiabatic_flame_temperature",
+        "source_id": "src-acme-psi-159",
+        "unit": "K",
+        "value": 2120
+      },
+      {
+        "experiment_id": "acme-cfi-g",
+        "id": "acme-cfi-g-m4",
+        "measurement_kind": "measured",
+        "parameter_description": "Approximate pressure, test A1",
+        "parameter_name": "pressure",
+        "source_id": "src-acme-psi-159",
+        "unit": "bar",
+        "value": 1.1
+      },
+      {
+        "experiment_id": "acme-cfi-g",
+        "id": "acme-cfi-g-m5",
+        "measurement_kind": "measured",
+        "parameter_description": "Peak burner temperature, test A2",
+        "parameter_name": "peak_burner_temperature",
+        "source_id": "src-acme-psi-159",
+        "unit": "C",
+        "value": 162.9
+      }
+    ],
+    "mission_applicability": [
+      "ISS"
+    ],
+    "name": "Advanced Combustion via Microgravity Experiments / Cool Flames Investigation with Gases (ACME CFI-G)",
+    "nasa_investigation_id": "PSI-159",
+    "related_investigation_ids": [],
+    "research_category": "Gaseous Cool Diffusion Flames",
+    "sample_dimensions": "Spherical porous burners; burner diameter not published on the PSI page",
+    "sample_geometry": "Spherical porous burners",
+    "scientific_objective": "Objectives: 1. Plan and support flight testing on ISS. 2. Determine conditions for which cool diffusion flames occur for propane, n-butane, and n-pentane; normal and inverse flames; and a broad range of Zst, Tad, and fluent flow rate. 3. Support flight tests with advanced CFD simulations. 4. Identify or develop a chemical kinetics mechanism that yields good agreement between CFD predictions and ISS measurements. 5. Disseminate results as widely as possible.",
+    "source_ids": [
+      "src-acme-psi-159"
+    ],
+    "transferability_note": "Cool flame kinetics research should facilitate the development of more efficient internal combustion engines; thermal efficiencies may increase to 60% if future engines can take advantage of ultra-lean combustion."
+  }
+]
