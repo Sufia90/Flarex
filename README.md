@@ -141,5 +141,5 @@ The script only validates. It never writes to data/, never overwrites, never del
 
 ## Notes
 
-- No fake NASA data is included. Demo data, when added later, will be marked DEMO DATA.
+- No fake NASA data or self invented data is included. Demo data, when added later, will be marked DEMO DATA.
 - Real NASA data is loaded as described in Status above, after validation and source checking.
